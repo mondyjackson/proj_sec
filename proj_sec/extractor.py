@@ -45,6 +45,8 @@ def write_llm_log(records: list[dict], path: Path | str) -> Path:
             f"*Included Source Requirements*\n{json.dumps(record.get('included_source_requirements'), ensure_ascii=False)}\n"
             f"*Context Added IDs*\n{json.dumps(record.get('context_added_ids'))}\n"
             f"*Coverage Policy*\n{record.get('coverage_policy', 'not recorded')}\n"
+            f"*Unselected Source IDs*\n{json.dumps(record.get('unselected_source_ids'))}\n"
+            f"*Review Flags*\n{json.dumps(record.get('review_flags', []))}\n"
             f"*Decoding Constraint*\n{record.get('decoding_constraint', 'unconstrained')}\n"
         )
     return write_text(path, "\n".join(blocks))
@@ -118,6 +120,7 @@ def _parse_legacy_response(raw: str, section) -> dict:
 
 def _analyze_response(raw: str, section: Section, *,
                       retain_description_context: bool = False) -> tuple[dict, dict]:
+    # The legacy keyword is accepted for compatibility but cannot add requirements.
     stripped = raw.strip()
     if stripped.startswith("```") and "\n" in stripped:
         stripped = stripped.split("\n", 1)[1].lstrip()
@@ -139,39 +142,25 @@ def _analyze_response(raw: str, section: Section, *,
         metadata = {"output_format": "source-excerpt-ids", "syntax_repair": None,
                     "model_element_name": None, "model_name_differs": False,
                     "selected_ids": ids, "model_selected_requirements": selected}
-    metadata.update({"element_name_source": "PDF heading", "source_element_name": section.title,
-                     "context_added_ids": [], "included_source_ids": metadata["selected_ids"],
-                     "coverage_policy": "model-selected-description"})
-    if retain_description_context and source_kind(section) == "Description":
-        # Description can contain conditions or paths absent from Remediation
-        # (for example /lib64 in CIS 5.6). Preserve that source context for a
-        # recommendation with a Remediation block. The caller must still
-        # validate a nonempty Gemma selection in Remediation before exporting.
-        # NONE remains the model's actual selection; added text is audited.
-        spans = candidate_excerpts(section)
-        included = list(range(1, len(spans) + 1))
-        value["requirements"] = sorted(set(spans))
-        metadata.update({"coverage_policy": "retain-description-context-for-remediation",
-                         "included_source_ids": included,
-                         "included_source_requirements": spans,
-                         "context_added_ids": [i for i in included if i not in metadata["selected_ids"]]
-                         if metadata["selected_ids"] is not None else None})
-    remediation = re.search(r"(?:^|\n)Remediation:[ \t]*\n(.*)\Z", section.text, re.DOTALL)
-    if remediation and normalize(remediation.group(1)):
-        # Gemma must identify an actual requirement before source expansion.
-        if not selected:
-            raise ValueError("Gemma must identify a requirement in Remediation")
-        all_remediation = candidate_excerpts(Section(section.cis_id, section.title, "Remediation:\n" + remediation.group(1)))
-        if source_kind(section) == "Remediation":
-            value["requirements"] = sorted(set(all_remediation))
-        else:
-            value["requirements"] = sorted(set(selected + all_remediation))
-        included = list(range(1, len(all_remediation) + 1))
-        metadata.update({"coverage_policy": "retain-complete-remediation",
-                         "included_source_ids": included,
-                         "context_added_ids": [i for i in included if i not in metadata["selected_ids"]]
-                         if metadata["selected_ids"] is not None else None,
-                         "included_source_requirements": all_remediation})
+    # Only the actual Gemma selection belongs in requirements. The complete
+    # source remains available separately for review; it must never backfill a
+    # NONE response or a partial model selection.
+    spans = candidate_excerpts(section)
+    unselected = [i for i, span in enumerate(spans, 1)
+                  if not any(normalize(span) in normalize(requirement)
+                             for requirement in selected)]
+    value["requirements"] = sorted(set(selected))
+    metadata.update({"element_name_source": "PDF heading",
+                     "source_element_name": section.title,
+                     "coverage_policy": "model-selected-only",
+                     "included_source_ids": metadata["selected_ids"],
+                     "included_source_requirements": value["requirements"],
+                     "context_added_ids": [],
+                     "source_context_requirements": spans,
+                     "unselected_source_ids": unselected,
+                     "review_flags": (["unselected-source-excerpts"] if unselected else [])
+                                     + (["no-model-selection"] if not selected else [])})
+
     return value, metadata
 
 
@@ -213,10 +202,32 @@ def extract_kdes(documents: tuple[Document, Document], output_dir: Path | str,
         raise ValueError("retries must be a nonnegative integer")
     sections_by_hash = {doc.sha256: split_sections(doc)[:section_limit] for doc in documents}
     records, outputs, prompt_blocks = [], {}, {style: [] for style in prompt_types}
+    source_context = []
+    extraction_complete = False
     cache_dir = Path(cache_dir) if cache_dir is not None else output_dir / "cache"
     cache_dir.mkdir(parents=True, exist_ok=True)
 
     def flush_audit():
+        review_items = [
+            {key: entry[key] for key in ("file", "side", "cis_id", "prompt_type",
+                                         "source_field", "unselected_source_ids", "review_flags")}
+            for entry in source_context if entry["review_flags"]
+        ]
+        write_json(output_dir / "source-context.json", {
+            "requirements_policy": "model-selected-only",
+            "purpose": "Supplemental source for review; not comparator requirements",
+            "blocks": source_context,
+        })
+        write_json(output_dir / "extraction-review.json", {
+            "status": ("completed-with-review-items" if review_items else "completed")
+                      if extraction_complete else "incomplete",
+            "requirements_policy": "model-selected-only",
+            "processed_source_blocks": len(source_context),
+            "blocks_with_review_items": len(review_items),
+            "items": review_items,
+            "limitations": "Unselected excerpts may be background or missed requirements. "
+                           "Format/source validation does not establish semantic accuracy.",
+        })
         write_llm_log(records, output_dir / "llm-output.txt")
         write_text(output_dir / "PROMPT.md", "# Actual extraction prompts\n\n" + "\n".join(
             f"## {style}\n\n" + "\n".join(prompt_blocks[style]) for style in prompt_types))
@@ -228,9 +239,7 @@ def extract_kdes(documents: tuple[Document, Document], output_dir: Path | str,
             for index, section in enumerate(sections_by_hash[document.sha256], 1):
                 merged_requirements = set()
                 blocks = _source_blocks(section)
-                has_remediation = any(field == "Remediation" for field, _ in blocks)
                 for field, part in blocks:
-                    retain_description = field == "Description" and has_remediation
                     prompt = BUILDERS[style](part, output_format="ids")
                     key = hashlib.sha256(("source-selection-trie-v1\n" + model_identity + "\n" + field + "\n" + prompt).encode()).hexdigest()
                     cache_file = cache_dir / f"{key}.json"
@@ -248,7 +257,7 @@ def extract_kdes(documents: tuple[Document, Document], output_dir: Path | str,
                     if existing is not None:
                         cached = json.loads(existing.read_text(encoding="utf-8"))
                         value, metadata = _analyze_response(
-                            cached["raw"], part, retain_description_context=retain_description)
+                            cached["raw"], part)
                         metadata["decoding_constraint"] = cached.get("decoding_constraint", "unconstrained")
                         used_prompt = cached.get("prompt_used", legacy_prompt if existing == legacy_file else prompt)
                         prompt_blocks[style].append(f"### Cached request: {side}, {section.cis_id}/{field}\n\n```text\n{used_prompt}\n```\n")
@@ -279,7 +288,7 @@ def extract_kdes(documents: tuple[Document, Document], output_dir: Path | str,
                                 except ValueError:
                                     pass
                                 value, metadata = _analyze_response(
-                                    raw, part, retain_description_context=retain_description)
+                                    raw, part)
                             except ValueError as exc:
                                 record["status"] = str(exc)
                                 flush_audit()
@@ -298,6 +307,15 @@ def extract_kdes(documents: tuple[Document, Document], output_dir: Path | str,
                                                       "model_identity": model_identity, "source_field": field, **metadata})
                                 break
                     merged_requirements.update(value["requirements"])
+                    source_context.append({
+                        **event, "input_sha256": document.sha256,
+                        "source_text": part.text,
+                        "source_excerpts": metadata["source_context_requirements"],
+                        "model_selected_ids": metadata["selected_ids"],
+                        "model_selected_requirements": metadata["model_selected_requirements"],
+                        "unselected_source_ids": metadata["unselected_source_ids"],
+                        "review_flags": metadata["review_flags"],
+                    })
                     flush_audit()
                     if progress:
                         progress({**event, "status": "cache-hit" if records[-1]["cached"] else "validated"})
@@ -310,5 +328,6 @@ def extract_kdes(documents: tuple[Document, Document], output_dir: Path | str,
             write_text(path, yaml.safe_dump(elements, allow_unicode=True, sort_keys=False))
             paths.append(path)
         outputs[style] = tuple(paths)
+    extraction_complete = True
     flush_audit()
     return outputs

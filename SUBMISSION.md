@@ -1,5 +1,7 @@
 # Submission handoff
 
+**Version 0.4.0 review:** requirements now contain only actual Gemma selections. The bundled final results and Mac executable are historical version 0.3.0 artifacts; they have not been regenerated for this policy. See [docs/MODEL_SELECTED_REQUIREMENTS.md](docs/MODEL_SELECTED_REQUIREMENTS.md).
+
 Public repository: https://github.com/mondyjackson/proj_sec
 
 ## Contents

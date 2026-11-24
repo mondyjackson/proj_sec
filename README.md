@@ -1,5 +1,7 @@
 # Proj Sec
 
+**Version 0.4.0 review:** requirements now contain only actual Gemma selections. The bundled final results and Mac executable are historical version 0.3.0 artifacts; they have not been regenerated for this policy. See [docs/MODEL_SELECTED_REQUIREMENTS.md](docs/MODEL_SELECTED_REQUIREMENTS.md).
+
 Public repository: https://github.com/mondyjackson/proj_sec
 
 The reviewed final outputs are in [submission/final-results.zip](submission/final-results.zip).
@@ -116,16 +118,14 @@ model-generated JSON. The decoder mode is recorded in the runtime and audit.
 See docs/CONSTRAINED_SELECTION.md for the implementation and evidence limits. Description and Remediation are
 processed separately for all three prompt styles.
 
-After Gemma identifies a requirement in a Remediation block, the output retains
-that complete source block as context, split into exact excerpts. This prevents
-commands, alternatives, or qualifying conditions from being dropped by partial
-model selections. The audit distinguishes model-selected IDs from IDs added by
-this deterministic coverage policy. For a recommendation with Remediation,
-the complete Description is also retained as explicitly labeled source context.
-This preserves conditions and paths that occur only in Description, including
-the added /lib64 directory in CIS 5.6. Gemma's actual selection, including NONE,
-remains separate in the audit. This policy favors coverage over brevity and
-may retain explanatory context. See docs/DESCRIPTION_CONTEXT.md.
+Only excerpts actually selected by Gemma are exported in `requirements`.
+Complete Description and Remediation text is recorded separately in
+`source-context.json`. It is not input to requirement comparison.
+`extraction-review.json` flags source excerpts not selected by the model;
+these may be background or missed obligations and require human review.
+A NONE Description response stays empty. Partial Remediation selections stay
+partial. Python does not add missing obligations or conditions to the primary output.
+See [docs/MODEL_SELECTED_REQUIREMENTS.md](docs/MODEL_SELECTED_REQUIREMENTS.md).
 
 KDE names come from PDF headings. Every original model response remains in the
 audit, alongside source provenance, selected IDs, included IDs, and coverage
@@ -134,7 +134,7 @@ selected every obligation. Full extraction and source review remain required.
 
 Existing validated JSON responses can be reused through the legacy cache key.
 Their actual original prompts and raw outputs stay in the audit, and the same
-source-context coverage rules apply. Invalid responses are not cached.
+model-selected-only policy applies. Invalid responses are not cached.
 The earlier bounded JSON punctuation repairs are for legacy responses only.
 
 ## Inputs and execution
@@ -180,7 +180,8 @@ and Hadolint are external dependencies; the executable does not embed them.
 
 ## Outputs
 
-The output directory contains input-inventory.json, source-section JSONs,
+The output directory contains source-context.json, extraction-review.json,
+input-inventory.json, source-section JSONs,
 PROMPT.md with the exact requests, llm-output.txt with the four required labeled
 fields, cache/, and one directory for each prompt style. Each style directory
 contains a document-named left/right YAML pair, both difference TEXT files,
@@ -193,17 +194,16 @@ record distinguishes incomplete work from a completed command.
 Each CIS recommendation is one KDE. Code assigns its name from the source
 heading without the number and Manual/Automated suffix. For each prompt style,
 Gemma selects numbered excerpts from Description and Remediation independently.
-For a recommendation with Remediation, complete Description and Remediation
-source context is merged under one KDE. Both present blocks must validate;
-an empty Description selection is allowed, but a Remediation response must
-identify a requirement before the KDE can be exported. Without Remediation,
-Description remains model-selected. A final KDE must have at least one requirement.
+Only actual selections from both fields are merged into the KDE requirements.
+Both present blocks must validate; an empty Description selection is allowed,
+but a Remediation response must identify a requirement before the KDE can be
+exported. A final KDE must have at least one model-selected requirement.
 
 The source splitter preserves every non-whitespace character. Programmatic
-copying preserves configuration quotes and commands. Audit fields identify
-model selections, source context added by code, and original model labels from
-legacy responses. None of that added source text is attributed to Gemma's raw
-output. See docs/NUMBERED_SELECTION.md for the design tradeoff and evidence.
+copying preserves the text of selected excerpts, including configuration quotes
+and commands. Supplemental context is stored separately; it does not make the
+model output more complete. A syntactically valid selection can miss an explicit
+instruction or select background text. Review the actual outputs before submission.
 
 Requirements are compared as sets, preserving case within commands. Names
 ignore whitespace and letter case. The comparator writes the symmetric
