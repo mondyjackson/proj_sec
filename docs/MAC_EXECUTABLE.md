@@ -1,32 +1,38 @@
-# Verified version 0.4.0 Apple Silicon executable
+# Verified version 0.5.0 Apple Silicon executable
 
 The user built the executable on native macOS ARM64 in the proj-sec Conda
-environment. The built executable returned 0.4.0 and this real-model check passed:
+environment and produced a valid real-model smoke result with:
 
 ```bash
-./dist/proj-sec smoke-model --model-python "$CONDA_PREFIX/bin/python" --device mps --dtype bfloat16 --max-new-tokens 256 --output outputs/binary-smoke-0.4.0
+./dist/proj-sec smoke-model --model-python "$CONDA_PREFIX/bin/python" --device mps --dtype bfloat16 --max-new-tokens 256 --output outputs/binary-smoke-0.5.0
 ```
 
-The uploaded model-runtime.json records google/gemma-3-1b-it, pinned revision
-dcc83ea841ab6100d6b47a070329e1ba4cf78752, MPS, and bfloat16. Actual raw prompt,
-model response, runtime metadata, and parsed smoke output are retained in
-mac-smoke-v0.4.0/. Runtime execution was performed on the user's Mac; the cloud
-review checked uploaded bytes and evidence and did not execute macOS code on Linux.
+The uploaded binary was independently inspected as an ARM64 Mach-O. Its frozen
+version is 0.5.0. All 12 bundled project-module code objects and the external
+Gemma worker agree with the reviewed source. See NATIVE_V0.5_VALIDATION.json.
+Native execution occurred on the user's Mac; Linux inspection did not execute
+ARM64 machine code.
 
-Archive: proj-sec-macos-arm64-v0.4.0.tar.gz (28,836,387 bytes).
-SHA-256: 6c3e9ea4641ef5c67dc1f21a5e414d9b1d7026ee879545695f224abf01b7ab26
+Actual prompt, raw Gemma response, parsed result, runtime metadata, and worker
+log are retained in mac-smoke-v0.5.0/. The runtime records google/gemma-3-1b-it,
+pinned revision dcc83ea841ab6100d6b47a070329e1ba4cf78752, MPS, and bfloat16.
+The raw log is written before parsing and therefore retains its initial
+unvalidated status; model-smoke.json is written only after successful parsing
+and source validation. The recorded response was independently revalidated.
 
-Executable: proj-sec (29,240,192 bytes), ARM64 Mach-O, mode 0755.
-SHA-256: 40d079d161e610ef8da88875faef09a5ce42de6239898cc354409b9becf6d5ae
+Archive: proj-sec-macos-arm64-v0.5.0.tar.gz (28,851,444 bytes).
+SHA-256: 69c1744b15384cb0892635dcd8cc91857783f78d7447e50143d9177daccea7b2
+
+Executable: proj-sec (29,255,216 bytes), ARM64 Mach-O, mode 0755.
+SHA-256: 75cd1e6b2ed37c5eece946d541d3c1e6660f1fdd76ea1c4cf6dbeac852d399ee
 
 ```bash
 python scripts/restore_macos_binary.py
 ./dist/proj-sec --version
 ```
 
-The original archive is retained in three raw parts under submission/macos.
-manifest.json records every part, archive, and executable checksum. The restore
-helper validates all hashes and refuses to overwrite differing files.
-The executable runs Gemma using an external activated model-enabled Python
-interpreter; weights, authentication, and Hadolint are not embedded.
-Use the Linux Actions artifact on Linux. The TA operating system is unspecified.
+The exact original archive is retained in three raw parts under submission/macos.
+The helper validates every part, archive, and executable hash and refuses to
+overwrite differing files. Real inference uses an external activated model-enabled
+Python interpreter. Weights, credentials, and Hadolint are not embedded.
+Use the GitHub Actions Linux artifact on Linux. The TA operating system is unknown.

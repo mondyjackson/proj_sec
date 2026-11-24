@@ -1,0 +1,10 @@
+{
+  "status": "verified",
+  "version": "0.5.0",
+  "result_metadata_files_reproduced": 185,
+  "scan_csv_paths_reproduced": 15,
+  "native_archive_reproduced_exactly": true,
+  "native_executable_permissions": "0755",
+  "native_restoration_idempotent": true,
+  "elapsed_seconds": 5.18
+}

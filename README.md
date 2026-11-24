@@ -1,17 +1,16 @@
 # Proj Sec
 
-**Current submission: version 0.4.0.** Final outputs contain only actual Gemma-selected requirements, with supplemental source context kept separately. All five pipeline runs and the native Mac build are complete. See [SUBMISSION.md](SUBMISSION.md) for restoration and [docs/MODEL_SELECTED_RESULTS_REVIEW.md](docs/MODEL_SELECTED_RESULTS_REVIEW.md) for model limitations.
+**Current submission: version 0.5.0.** All five assigned pipeline runs and the native Apple Silicon executable are verified. The default pipeline uses real Gemma omission review with a language-evidence gate. Only actual model selections can enter the final requirements.
 
 Public repository: https://github.com/mondyjackson/proj_sec
 
-The reviewed version 0.4.0 final outputs are in [submission/final-results.zip](submission/final-results.zip).
-Restore all five pairs into outputs/model-selected, including all 15 scan CSV paths, with:
+Restore the verified five-pair outputs into outputs/coverage-final, including all 30 YAMLs and all 15 scan CSV paths:
 
 ```bash
 python scripts/restore_final_results.py
 ```
 
-See [submission/README.md](submission/README.md) for the bundle contents and hashes.
+The exact uploaded result archive is stored as checksum-verified parts under [submission/results](submission/results). See [SUBMISSION.md](SUBMISSION.md) for the complete handoff, [submission/README.md](submission/README.md) for archive details, and [docs/COVERAGE_REVIEW.md](docs/COVERAGE_REVIEW.md) for exact-text coverage and limitations. The review covers the parsed Description and Remediation fields against an assistant-reviewed reference; it does not establish independent semantic accuracy. Some initial background selections remain.
 
 **M1 Mac setup:** start with [TOMORROW_START_HERE.md](TOMORROW_START_HERE.md).
 
@@ -43,7 +42,8 @@ Individual submission; no teammates.
 
 The core and scanner were checked on Linux x86_64 with Python 3.12. The
 user completed real Gemma extraction on native Apple Silicon Python 3.12.16,
-using MPS and bfloat16 in the proj-sec Conda environment. Authenticated model
+using MPS/bfloat16 for initial extraction and MPS/float32 for omission review,
+with sequential model workers in the proj-sec Conda environment. Authenticated model
 access is required for new inference. Use Python 3.12 for the supplied core
 dependency lock.
 
@@ -123,9 +123,13 @@ Complete Description and Remediation text is recorded separately in
 `source-context.json`. It is not input to requirement comparison.
 `extraction-review.json` flags source excerpts not selected by the model;
 these may be background or missed obligations and require human review.
-A NONE Description response stays empty. Partial Remediation selections stay
-partial. Python does not add missing obligations or conditions to the primary output.
-See [docs/MODEL_SELECTED_REQUIREMENTS.md](docs/MODEL_SELECTED_REQUIREMENTS.md).
+The initial NONE response and partial selections remain unchanged in their audit.
+The default omission-review stage can add excerpts only when Gemma actually
+selects them in a recorded review response and the language-evidence gate accepts
+them. Python never fills an omission solely from a reference answer or source text.
+See [docs/COVERAGE_REVIEW.md](docs/COVERAGE_REVIEW.md) for the current policy and
+[docs/MODEL_SELECTED_REQUIREMENTS.md](docs/MODEL_SELECTED_REQUIREMENTS.md) for the
+version 0.4.0 baseline policy.
 
 KDE names come from PDF headings. Every original model response remains in the
 audit, alongside source provenance, selected IDs, included IDs, and coverage
@@ -134,7 +138,7 @@ selected every obligation. Full extraction and source review remain required.
 
 Existing validated JSON responses can be reused through the legacy cache key.
 Their actual original prompts and raw outputs stay in the audit, and the same
-model-selected-only policy applies. Invalid responses are not cached.
+initial model-selected policy applies before omission review. Invalid responses are not cached.
 The earlier bounded JSON punctuation repairs are for legacy responses only.
 
 ## Inputs and execution
@@ -230,9 +234,12 @@ and docs/RULE_MAPPING.md for the mapping limitations and severity handling.
 The supplied workflow runs tests on push, pull_request, and manual dispatch,
 including real Hadolint tests without needing model credentials. After tests pass, a separate job builds a Linux executable and uploads it as
 an artifact with a checksum. Actual test logs are also retained as an artifact.
-The [verified workflow run](https://github.com/mondyjackson/proj_sec/actions/runs/45441968501)
-passed all 103 tests and successfully built and smoke-tested the Linux executable.
-The actual test log is preserved in docs/github-actions-test-results.txt.
+Current run logs and platform artifacts are available in
+[GitHub Actions](https://github.com/mondyjackson/proj_sec/actions).
+Version 0.5.0 passed 122 local tests, including real Hadolint and restoration
+checks; the transcript is in docs/coverage-review-unit-tests.txt. The native Mac
+artifact is verified separately in docs/MAC_EXECUTABLE.md. See
+[docs/GITHUB_ACTIONS.md](docs/GITHUB_ACTIONS.md) for current and historical CI evidence.
 
 A local git pull is not a native GitHub Actions trigger. An optional post-merge
 hook runs tests after pulls that merge or fast-forward new commits:

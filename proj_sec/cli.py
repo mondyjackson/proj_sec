@@ -14,6 +14,7 @@ from .common import MODEL_ID, write_json
 from .comparator import compare_names, compare_requirements, load_yaml_pair
 from .executor import export_csv, load_difference_reports, map_hadolint_rules, run_hadolint
 from .extractor import extract_kdes, validate_documents
+from .coverage_review import POLICY as REVIEW_POLICY, refine_pair
 from .model import GemmaGenerator
 from .pdfio import section_dicts
 
@@ -72,6 +73,10 @@ def build_parser():
             item.add_argument("--device", choices=("auto", "cpu", "cuda", "mps"), default="auto")
             item.add_argument("--dtype", choices=("auto", "float32", "float16", "bfloat16"), default="auto")
             item.add_argument("--max-new-tokens", type=int, default=1024)
+            item.add_argument("--no-omission-review", action="store_true", help="Run the initial extraction alone for comparison")
+            item.add_argument("--review-cache", type=Path, default=Path(".cache/gemma-omission-review-check-v1"))
+            item.add_argument("--review-dtype", choices=("auto", "float32", "float16", "bfloat16"), default="float32")
+            item.add_argument("--review-passes", type=int, choices=(1, 2, 3), default=2)
         if command == "run":
             item.add_argument("--dockerfiles", type=Path, required=True)
             item.add_argument("--hadolint", default="hadolint")
@@ -143,6 +148,14 @@ def main(argv=None):
                                            cache_dir=args.model_cache,
                                            progress=lambda state: print(json.dumps(state), flush=True))
             if args.command != "smoke-model":
+                if not args.no_omission_review:
+                    print("Initial model closed; reviewing omitted source excerpts with real Gemma.", flush=True)
+                    with GemmaGenerator(args.output, python=args.model_python, device=args.device,
+                                        model_path=args.model_path, max_new_tokens=512,
+                                        dtype=args.review_dtype) as reviewer:
+                        outputs = refine_pair(outputs, args.output, reviewer, cache_dir=args.review_cache,
+                                              passes=args.review_passes,
+                                              progress=lambda state: print(json.dumps(state), flush=True))
                 scan_statuses = {}
                 if args.command == "run":
                     for style, pair in outputs.items():
@@ -154,6 +167,7 @@ def main(argv=None):
                 write_json(status_path, {"status": "completed-with-scan-errors" if any(s != "completed" for s in scan_statuses.values()) else "completed", "command": args.command,
                                         "scan_statuses": scan_statuses,
                                         "model": MODEL_ID, "inputs": inventory,
+                                        "requirements_policy": "model-selected-only" if args.no_omission_review else REVIEW_POLICY,
                                         "prompt_types": list(outputs)})
                 print(f"Completed {args.command}: {args.output}")
     except (Exception, KeyboardInterrupt) as exc:

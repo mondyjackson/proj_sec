@@ -48,6 +48,9 @@ def write_llm_log(records: list[dict], path: Path | str) -> Path:
             f"*Unselected Source IDs*\n{json.dumps(record.get('unselected_source_ids'))}\n"
             f"*Review Flags*\n{json.dumps(record.get('review_flags', []))}\n"
             f"*Decoding Constraint*\n{record.get('decoding_constraint', 'unconstrained')}\n"
+            f"*Review Pass*\n{record.get('review_pass')}\n"
+            f"*Accepted Review Proposals*\n{json.dumps(record.get('review_accepted', []), ensure_ascii=False)}\n"
+            f"*Rejected Review Proposals*\n{json.dumps(record.get('review_rejected', []), ensure_ascii=False)}\n"
         )
     return write_text(path, "\n".join(blocks))
 
@@ -228,6 +231,7 @@ def extract_kdes(documents: tuple[Document, Document], output_dir: Path | str,
             "limitations": "Unselected excerpts may be background or missed requirements. "
                            "Format/source validation does not establish semantic accuracy.",
         })
+        write_json(output_dir / "llm-records.json", records)
         write_llm_log(records, output_dir / "llm-output.txt")
         write_text(output_dir / "PROMPT.md", "# Actual extraction prompts\n\n" + "\n".join(
             f"## {style}\n\n" + "\n".join(prompt_blocks[style]) for style in prompt_types))

@@ -1,29 +1,30 @@
-# Verified GitHub Actions execution
+# GitHub Actions validation
 
-Repository workflows: https://github.com/mondyjackson/proj_sec/actions
+Current workflows and actual logs: https://github.com/mondyjackson/proj_sec/actions
 
-The version 0.4.0 model-selected implementation passed this actual workflow:
-https://github.com/mondyjackson/proj_sec/actions/runs/45441968501
+The version 0.5.0 implementation runs the full test suite, including real
+Hadolint integration, on push, pull_request, and manual dispatch. A dependent
+Linux job builds the native executable, checks its version and comparison
+command, and uploads a permissions-preserving archive with a checksum.
 
-The run tested commit 476ffa1f62fd44d3de84d031ebb55de4b4193a8a.
-All 103 tests passed in 12.691 seconds, including real Hadolint integration.
-The Linux job built the native Linux executable, checked its version and a
-comparison command, and uploaded a permissions-preserving archive and checksum.
-The user's Mac separately passed all 103 tests in 8.374 seconds and its native
-0.4.0 executable passed real Gemma smoke-model; see MAC_EXECUTABLE.md.
+The complete local 122-test transcript is retained in
+coverage-review-unit-tests.txt. The actual GitHub transcript and platform
+archive are available from the successful final published commit's workflow.
+Artifacts are named test-results and proj-sec-linux-x86_64. These contain
+actual execution output rather than a hand-written passing-test summary.
+Native Mac 0.5.0 code and real Gemma smoke evidence are separately verified in
+MAC_EXECUTABLE.md and mac-smoke-v0.5.0/.
 
-Every subsequent push/PR also runs the full workflow. Use the workflows link
-above to inspect the final published commit's test logs and Linux artifact.
-Artifacts are named test-results and proj-sec-linux-x86_64. They contain the
-actual unittest transcript and Linux tar archive/CHECKSUMS.txt respectively.
+Historical successful checkpoints:
 
-The initial historical version 0.3.0 run is retained separately:
-https://github.com/mondyjackson/proj_sec/actions/runs/45426078503
-Its unmodified 97-test artifact is preserved as github-actions-test-results.txt;
-it is historical evidence, not the current 103-test transcript.
+- Version 0.5.0 initial implementation, 119 tests and Linux build:
+  https://github.com/mondyjackson/proj_sec/actions/runs/45493270353
+- Version 0.4.0 model-selected implementation, 103 tests and Linux build:
+  https://github.com/mondyjackson/proj_sec/actions/runs/45441968501
+- Version 0.3.0 initial implementation, 97 tests:
+  https://github.com/mondyjackson/proj_sec/actions/runs/45426078503
 
-The workflow runs on push, pull_request, and manual dispatch. Local git pull
-does not create a native GitHub Actions event. Use scripts/pull_and_test.py
-for tests after successful local pulls, including already-up-to-date pulls.
-The optional post-merge hook has narrower merge/fast-forward and virtualenv
-coverage, as documented in README.md.
+A local git pull does not produce a GitHub Actions event. Use
+scripts/pull_and_test.py for tests after successful local pulls, including
+already-up-to-date pulls. The optional post-merge hook has narrower
+merge/fast-forward and virtualenv coverage, as documented in README.md.
