@@ -2,10 +2,18 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.apply_model_selected_update import apply_update, git_blob_sha
+from scripts.apply_model_selected_update import FILES, apply_update, git_blob_sha
 
 
 class ModelSelectedUpdateTests(unittest.TestCase):
+    def test_embedded_payload_matches_the_reviewed_project_files(self):
+        root = Path(__file__).resolve().parents[1]
+        for relative, entry in FILES.items():
+            with self.subTest(path=relative):
+                self.assertEqual((root/relative).read_text(encoding='utf-8'), entry['updated'])
+                if relative.endswith('.py'):
+                    compile(entry['updated'], relative, 'exec')
+
     def prepare(self, root):
         (root/'main.py').touch()
         (root/'proj_sec').mkdir()
