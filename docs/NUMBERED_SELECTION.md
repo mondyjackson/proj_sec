@@ -1,5 +1,8 @@
 # Numbered selection and source coverage
 
+> Historical version 0.3.0 policy and evidence. Version 0.4.0 exports only actual model selections and stores source context separately. See [MODEL_SELECTED_REQUIREMENTS.md](MODEL_SELECTED_REQUIREMENTS.md).
+
+
 ## Observed problem and model evidence
 
 Free-form JSON extraction failed on punctuation and exact copying, including

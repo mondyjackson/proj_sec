@@ -29,7 +29,10 @@ def restore(source, output):
     if len(binary) != manifest['binary_bytes'] or hashlib.sha256(binary).hexdigest() != manifest['binary_sha256']:
         raise ValueError('Mac executable checksum mismatch')
     output = output.expanduser().resolve()
-    targets = [(output/'proj-sec', binary), (output/'proj-sec-macos-arm64.tar.gz', archive)]
+    archive_name = manifest['archive']
+    if Path(archive_name).name != archive_name:
+        raise ValueError('Invalid archive filename')
+    targets = [(output/'proj-sec', binary), (output/archive_name, archive)]
     for path, content in targets:
         if path.is_symlink() or (path.exists() and (not path.is_file() or path.read_bytes() != content)):
             raise ValueError(f'Existing file differs; choose a fresh --output directory: {path}')

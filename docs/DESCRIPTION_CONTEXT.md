@@ -1,5 +1,8 @@
 # Description coverage after the completed Mac extraction
 
+> Historical version 0.3.0 policy and evidence. Version 0.4.0 exports only actual model selections and stores source context separately. See [MODEL_SELECTED_REQUIREMENTS.md](MODEL_SELECTED_REQUIREMENTS.md).
+
+
 ## What the supplied results establish
 
 The user supplied Proj_Sec_Extraction_Results.zip after all five assigned pairs

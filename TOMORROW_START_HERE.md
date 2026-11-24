@@ -1,5 +1,8 @@
 # Start here on your Mac
 
+> Version 0.4.0 outputs and native Mac executable are complete. Start with [SUBMISSION.md](SUBMISSION.md) to restore the final artifacts. The setup/rerun guide below is for reproducing the work.
+
+
 This package is prepared for Jackson's MacBook Air M1 (2020), 8 GB RAM.
 It contains the project source, tests, three input PDFs, and setup instructions.
 It is a development checkpoint; real Gemma extraction and final submission

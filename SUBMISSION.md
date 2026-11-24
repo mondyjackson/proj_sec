@@ -1,59 +1,60 @@
-# Submission handoff
+# Version 0.4.0 submission handoff
 
 Public repository: https://github.com/mondyjackson/proj_sec
 
-## Contents
+Jackson Mondy — individual submission. Contributor information is in README.md.
 
-- Required extractor, comparator, and executor functions and their tests.
-- All three prompt styles and actual real Gemma response logs.
-- All five assigned input pairs, including v1/v1 and v2/v2, in the final result bundle.
-- Complete contributor details in README.md.
-- Pinned Python requirements, local pull/test helpers, and GitHub Actions.
-- Actual successful GitHub test logs and a Linux PyInstaller artifact.
-- The user's runtime-tested native Mac PyInstaller archive and checksum manifest.
-
-The instructor PDFs, Dockerfile dataset, model credentials, and model weights
-are not committed. Supply authorized inputs separately when rerunning.
-
-## Restore the reviewed outputs
+## Restore the completed outputs
 
 ```bash
 python scripts/restore_final_results.py
 ```
 
-This restores the 30 YAMLs, actual prompts/LLM logs, comparator/mapping reports,
-scan statuses/error inventories, and all 15 identical, hash-verified CSV paths.
-The CSV copies use about 1.5 GB. No model or scanner rerun is needed to restore them.
+This restores outputs/model-selected for all five assigned pairs and all three
+prompt styles: 30 YAMLs, original prompts and actual Gemma response logs, separate
+source-context/review files, comparison reports, mappings, scan manifests/error
+inventories, and all 15 CSV paths. Identical CSV data is stored once and verified
+against every recorded hash. Restored CSV copies occupy about 1.5 GB.
+The helper refuses to overwrite differing files; use --output with a fresh
+folder when preserving another result set.
 
-## Restore the verified Mac executable
+## Restore the verified native Mac executable
 
 ```bash
 python scripts/restore_macos_binary.py
 ./dist/proj-sec --version
 ```
 
-The helper reconstructs dist/proj-sec and dist/proj-sec-macos-arm64.tar.gz
-with the original verified bytes and executable permissions. Version output is
-0.3.0. See docs/MAC_EXECUTABLE.md for the real Gemma smoke-test evidence and
-full checksum. Linux users should select the Linux executable artifact from
-the successful Actions run linked in docs/GITHUB_ACTIONS.md.
+Expected version: 0.4.0. The exact uploaded Mac archive and executable are
+reconstructed from checksum-verified parts with executable permissions intact.
+See docs/MAC_EXECUTABLE.md for hashes and actual Mac runtime evidence.
+The executable needs Apple Silicon macOS and an activated model-enabled Python
+environment for real Gemma inference. Model weights and Hadolint remain external.
+Linux users can use the executable artifact from a successful GitHub Actions run.
 
-To rerun the complete pipeline, follow README.md for the external model-enabled
-Python environment, Gemma authentication, input paths, and Hadolint setup.
+## Verification and limits
 
-## Known result limitations
+All 103 tests passed on the user's Mac. The native version command returned
+0.4.0 and real Gemma smoke-model passed on MPS/bfloat16. Actual smoke responses
+are retained under docs/mac-smoke-v0.4.0. The repository workflow runs tests and
+builds/smoke-tests a Linux executable; see docs/GITHUB_ACTIONS.md.
 
-All original 397,567 Dockerfile paths are accounted for in every scan. The
-final outputs explicitly retain 2,546 DL1000 parser failures and two files
-affected by a reproducible upstream Hadolint exception. Their statuses are
-completed-with-tool-errors/completed-with-scan-errors, not error-free scans.
-See docs/FINAL_RESULTS_REVIEW.md for provenance, counts, and independent checks.
-Actual model selections and source context added by code remain distinguished.
+The five full pipeline runs completed using validated model/scanner caches.
+Primary requirements contain only actual Gemma selections; background and
+missed obligations remain possible. Source-fidelity checks do not establish
+full semantic coverage. See docs/MODEL_SELECTED_RESULTS_REVIEW.md.
+All 397,567 Dockerfile paths per scan are accounted for. Scan statuses explicitly
+retain 2,546 parser failures and two files affected by an upstream Hadolint
+exception; they are not reported as error-free scans. See docs/FINAL_RESULTS_REVIEW.md.
 
-## Final user step
+The instructor PDFs, Dockerfile dataset, credentials, model weights, and local
+caches are not included in the public repository. Supply authorized inputs
+separately for new inference/scans.
 
-Review the repository and submit its URL and requested deliverables through
-the instructor's form: https://forms.office.com/r/fMQeqiUbK3
+## Submit
 
-The supplied assignment states December 1, 2026, 11:59 PM CST as the deadline.
-The submission form has not been submitted by this project preparation process.
+Review the code, results, and documented limitations, then submit the repository
+URL and requested deliverables through https://forms.office.com/r/fMQeqiUbK3.
+The stated deadline is December 1, 2026, 11:59 PM CST. The form has not been
+submitted by this preparation process. No grade or complete rubric compliance
+is guaranteed by successful execution.

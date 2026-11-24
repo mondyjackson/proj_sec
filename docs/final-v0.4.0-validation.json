@@ -1,0 +1,115 @@
+{
+  "validation_errors": [],
+  "release_version": "0.4.0",
+  "unchanged_checked_extraction_files": 65,
+  "scan_outputs": [
+    {
+      "path": "v1-v2/zero-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v1-v2/few-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v1-v2/chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v0-v1/zero-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v0-v1/few-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v0-v1/chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v2-v2/zero-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v2-v2/few-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v2-v2/chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v0-v2/zero-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v0-v2/few-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v0-v2/chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v1-v1/zero-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v1-v1/few-shot",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    },
+    {
+      "path": "v1-v1/chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "unique_executed": 0,
+      "unique_cached": 178527
+    }
+  ],
+  "csv_sha256": "68815c2948c5e57800246a992d4523bdf78015d43ae56cbd43f0891f6eaaf99e",
+  "csv_rows": 1598633,
+  "findings": 2284489,
+  "candidates_per_scan": 397567,
+  "parse_error_files": 2546,
+  "tool_error_files": 2,
+  "binary_package": {
+    "version": "0.4.0",
+    "architecture": "arm64",
+    "executable_sha256": "40d079d161e610ef8da88875faef09a5ce42de6239898cc354409b9becf6d5ae",
+    "archive_sha256": "6c3e9ea4641ef5c67dc1f21a5e414d9b1d7026ee879545695f224abf01b7ab26"
+  },
+  "binary_bytes": 29240192,
+  "archive_bytes": 28836387,
+  "real_mac_version_and_smoke_test_confirmed_by_user": true,
+  "binary_header_architecture": "Mach-O ARM64",
+  "scan_evidence_limit": "CSV bytes match the previously structurally audited CSV and independently rescanned 256-file sample. Full per-content findings and per-file logs are retained on the user Mac and omitted from the compact bundle.",
+  "semantic_limits": "See MODEL_SELECTED_RESULTS_REVIEW.md; source fidelity does not establish complete semantic coverage."
+}

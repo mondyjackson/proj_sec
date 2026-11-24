@@ -29,15 +29,15 @@
   The final 1,598,633-row CSV was validated, and an independent 256-file rescan
   matched. All 15 CSV hashes agree; the bundled results helper restores them.
 - Task 4: contributor metadata is complete; the repository is public; the
-  published GitHub workflow passed all 97 tests and produced the Linux binary
+  published GitHub workflow passed all 103 tests and produced the Linux binary
   and checksum artifact. Actual test logs are preserved; see GITHUB_ACTIONS.md.
 - GitHub has no native local-pull event. CI runs on push, pull_request, and
   manual events. scripts/pull_and_test.py tests successful local pulls with the
   active interpreter, including already-up-to-date pulls; an optional post-merge
   hook covers merges/fast-forwards in an activated Python virtualenv.
-- The KDE-per-recommendation design, separate output pair per style, deterministic
-  context policy, partial rule mappings, and tool limitations are documented.
-- The native Mac executable returned version 0.3.0 and passed real Gemma
+- The KDE-per-recommendation design, separate output pair per style, model-selected-only
+  primary requirements and separate source-context policy, partial rule mappings, and tool limitations are documented.
+- The native Mac executable returned version 0.4.0 and passed real Gemma
   MPS/bfloat16 inference. Its uploaded archive checksum, ARM64 header, and
   executable permissions were verified. See MAC_EXECUTABLE.md. The TA platform
   is unspecified; select the matching Mac or Linux artifact.

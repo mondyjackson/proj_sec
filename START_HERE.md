@@ -1,5 +1,8 @@
 # Start here
 
+> Version 0.4.0 outputs and native Mac executable are complete. Start with [SUBMISSION.md](SUBMISSION.md) to restore the final artifacts. The setup/rerun guide below is for reproducing the work.
+
+
 Read README.md for installation, execution, and contributor details.
 All five real Mac pipeline runs have been reviewed; their outputs are bundled
 under submission/. Restore them with `python scripts/restore_final_results.py`.

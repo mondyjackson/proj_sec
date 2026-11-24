@@ -32,23 +32,25 @@ class SourceSelectionTests(unittest.TestCase):
         self.section = Section('2.2', 'Ensure network traffic is restricted between containers on the default bridge',
                                'Remediation:\n' + REMEDIATION)
 
-    def test_real_partial_selections_preserve_all_remediation_and_record_added_context(self):
+    def test_partial_model_selections_do_not_backfill_unselected_remediation(self):
         spans = candidate_excerpts(self.section)
         self.assertEqual(len(spans), 5)
         for raw, selected in [('1, 3\n', [1, 3]), ('1,3,5\n', [1, 3, 5]), ('1, 4\n', [1, 4])]:
             with self.subTest(raw=raw):
                 value, metadata = _analyze_response(raw, self.section)
-                self.assertEqual(set(value['requirements']), set(spans))
+                expected = [spans[i - 1] for i in selected]
+                self.assertEqual(set(value['requirements']), set(expected))
+                self.assertEqual(metadata['model_selected_requirements'], expected)
                 self.assertEqual(metadata['selected_ids'], selected)
-                self.assertEqual(metadata['included_source_ids'], [1, 2, 3, 4, 5])
-                self.assertEqual(metadata['context_added_ids'], [i for i in range(1, 6) if i not in selected])
-                self.assertEqual(metadata['coverage_policy'], 'retain-complete-remediation')
-                output = ' '.join(value['requirements'])
-                self.assertIn('"icc": false', output)
-                self.assertIn('dockerd --icc=false', output)
-                self.assertIn('NET_RAW', output)
-                self.assertIn('default docker bridge', output)
-                self.assertTrue(all(requirement in normalize(REMEDIATION) for requirement in value['requirements']))
+                self.assertEqual(metadata['included_source_ids'], selected)
+                self.assertEqual(metadata['context_added_ids'], [])
+                self.assertEqual(metadata['coverage_policy'], 'model-selected-only')
+                self.assertEqual(metadata['source_context_requirements'], spans)
+                self.assertEqual(metadata['unselected_source_ids'],
+                                 [i for i in range(1, 6) if i not in selected])
+                self.assertEqual(metadata['review_flags'], ['unselected-source-excerpts'])
+                self.assertTrue(all(requirement in normalize(REMEDIATION)
+                                    for requirement in value['requirements']))
 
     def test_candidate_splitting_preserves_every_non_whitespace_character(self):
         spans = candidate_excerpts(self.section)
@@ -129,7 +131,7 @@ class SourceSelectionTests(unittest.TestCase):
             self.assertTrue(all(entry['selected_ids'] == [1] for entry in cache))
             log = (root / 'two/llm-output.txt').read_text()
             self.assertIn('*Model Selected IDs*\n[1]', log)
-            self.assertIn('*Coverage Policy*\nretain-complete-remediation', log)
+            self.assertIn('*Coverage Policy*\nmodel-selected-only', log)
 
 
 if __name__ == '__main__':
