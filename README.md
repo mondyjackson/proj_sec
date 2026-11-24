@@ -1,6 +1,10 @@
 # Proj Sec
 
-**Current submission: version 0.4.0.** Final outputs contain only actual Gemma-selected requirements, with supplemental source context kept separately. All five pipeline runs and the native Mac build are complete. See [SUBMISSION.md](SUBMISSION.md) for restoration and [docs/MODEL_SELECTED_RESULTS_REVIEW.md](docs/MODEL_SELECTED_RESULTS_REVIEW.md) for model limitations.
+**Candidate source: version 0.5.0; packaged submission checkpoint: version 0.4.0.**
+
+The default pipeline now includes real Gemma omission review with a language-evidence gate. See [docs/COVERAGE_REVIEW.md](docs/COVERAGE_REVIEW.md) for recorded full-document coverage, limitations, and regeneration commands. The version 0.5.0 five-pair run and native build must be verified before replacing packaged artifacts.
+
+**Packaged checkpoint:** Final outputs contain only actual Gemma-selected requirements, with supplemental source context kept separately. All five pipeline runs and the native Mac build are complete. See [SUBMISSION.md](SUBMISSION.md) for restoration and [docs/MODEL_SELECTED_RESULTS_REVIEW.md](docs/MODEL_SELECTED_RESULTS_REVIEW.md) for model limitations.
 
 Public repository: https://github.com/mondyjackson/proj_sec
 
@@ -123,9 +127,13 @@ Complete Description and Remediation text is recorded separately in
 `source-context.json`. It is not input to requirement comparison.
 `extraction-review.json` flags source excerpts not selected by the model;
 these may be background or missed obligations and require human review.
-A NONE Description response stays empty. Partial Remediation selections stay
-partial. Python does not add missing obligations or conditions to the primary output.
-See [docs/MODEL_SELECTED_REQUIREMENTS.md](docs/MODEL_SELECTED_REQUIREMENTS.md).
+The initial NONE response and partial selections remain unchanged in their audit.
+The default omission-review stage can add excerpts only when Gemma actually
+selects them in a recorded review response and the language-evidence gate accepts
+them. Python never fills an omission solely from a reference answer or source text.
+See [docs/COVERAGE_REVIEW.md](docs/COVERAGE_REVIEW.md) for the current policy and
+[docs/MODEL_SELECTED_REQUIREMENTS.md](docs/MODEL_SELECTED_REQUIREMENTS.md) for the
+version 0.4.0 baseline policy.
 
 KDE names come from PDF headings. Every original model response remains in the
 audit, alongside source provenance, selected IDs, included IDs, and coverage
@@ -134,7 +142,7 @@ selected every obligation. Full extraction and source review remain required.
 
 Existing validated JSON responses can be reused through the legacy cache key.
 Their actual original prompts and raw outputs stay in the audit, and the same
-model-selected-only policy applies. Invalid responses are not cached.
+initial model-selected policy applies before omission review. Invalid responses are not cached.
 The earlier bounded JSON punctuation repairs are for legacy responses only.
 
 ## Inputs and execution
@@ -233,6 +241,9 @@ an artifact with a checksum. Actual test logs are also retained as an artifact.
 The [verified workflow run](https://github.com/mondyjackson/proj_sec/actions/runs/45441968501)
 passed all 103 tests and successfully built and smoke-tested the Linux executable.
 The actual test log is preserved in docs/github-actions-test-results.txt.
+That run documents the packaged checkpoint. Candidate version 0.5.0 passed
+119 local tests, including the real Hadolint tests; its log is in
+docs/coverage-review-unit-tests.txt. Native Mac regeneration remains required.
 
 A local git pull is not a native GitHub Actions trigger. An optional post-merge
 hook runs tests after pulls that merge or fast-forward new commits:

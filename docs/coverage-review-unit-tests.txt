@@ -1,0 +1,162 @@
+test_command_case_is_not_erased (test_comparator.ComparatorTests.test_command_case_is_not_erased) ... ok
+test_compare_names (test_comparator.ComparatorTests.test_compare_names) ... ok
+test_compare_requirements (test_comparator.ComparatorTests.test_compare_requirements) ... ok
+test_duplicate_yaml_keys_and_aliases_rejected (test_comparator.ComparatorTests.test_duplicate_yaml_keys_and_aliases_rejected) ... ok
+test_identical_and_reordered_documents_have_no_changes (test_comparator.ComparatorTests.test_identical_and_reordered_documents_have_no_changes) ... ok
+test_load_yaml_pair (test_comparator.ComparatorTests.test_load_yaml_pair) ... ok
+test_removed_element_requirements_are_reported (test_comparator.ComparatorTests.test_removed_element_requirements_are_reported) ... ok
+test_every_path_in_the_token_trie_is_a_valid_complete_selection (test_constrained_selection.ConstrainedSelectionTests.test_every_path_in_the_token_trie_is_a_valid_complete_selection) ... ok
+test_extractor_uses_the_constrained_generator_method (test_constrained_selection.ConstrainedSelectionTests.test_extractor_uses_the_constrained_generator_method) ... ok
+test_generator_sends_selection_constraint_and_requires_worker_acknowledgment (test_constrained_selection.ConstrainedSelectionTests.test_generator_sends_selection_constraint_and_requires_worker_acknowledgment) ... ok
+test_invalid_selection_request_is_rejected_before_loading_the_model (test_constrained_selection.ConstrainedSelectionTests.test_invalid_selection_request_is_rejected_before_loading_the_model) ... ok
+test_prefix_callback_handles_id_one_and_ten_without_allowing_id_eleven (test_constrained_selection.ConstrainedSelectionTests.test_prefix_callback_handles_id_one_and_ten_without_allowing_id_eleven) ... ok
+test_previously_valid_numeric_cache_is_reused_with_original_mode (test_constrained_selection.ConstrainedSelectionTests.test_previously_valid_numeric_cache_is_reused_with_original_mode) ... ok
+test_single_excerpt_has_exactly_one_nonempty_completion (test_constrained_selection.ConstrainedSelectionTests.test_single_excerpt_has_exactly_one_nonempty_completion) ... ok
+test_tokenizer_round_trip_is_required (test_constrained_selection.ConstrainedSelectionTests.test_tokenizer_round_trip_is_required) ... ok
+test_an_incomplete_pair_cannot_create_a_completed_archive (test_coverage_package.CoveragePackageTests.test_an_incomplete_pair_cannot_create_a_completed_archive) ... ok
+test_manifest_preserves_all_paths_even_when_csv_contents_differ (test_coverage_package.CoveragePackageTests.test_manifest_preserves_all_paths_even_when_csv_contents_differ) ... ok
+test_a_failed_review_does_not_mark_itself_complete (test_coverage_review.CoverageReviewTests.test_a_failed_review_does_not_mark_itself_complete) ... ok
+test_a_supporting_referent_requires_an_adjacent_selected_instruction (test_coverage_review.CoverageReviewTests.test_a_supporting_referent_requires_an_adjacent_selected_instruction) ... ok
+test_cache_is_revalidated_and_does_not_need_inference (test_coverage_review.CoverageReviewTests.test_cache_is_revalidated_and_does_not_need_inference) ... ok
+test_cache_with_wrong_prompt_is_rejected (test_coverage_review.CoverageReviewTests.test_cache_with_wrong_prompt_is_rejected) ... ok
+test_conditional_no_action_and_need_clauses_are_kept_when_proposed (test_coverage_review.CoverageReviewTests.test_conditional_no_action_and_need_clauses_are_kept_when_proposed) ... ok
+test_description_of_a_capability_is_not_an_operator_instruction (test_coverage_review.CoverageReviewTests.test_description_of_a_capability_is_not_an_operator_instruction) ... ok
+test_final_yaml_and_logs_contain_baseline_and_only_accepted_proposals (test_coverage_review.CoverageReviewTests.test_final_yaml_and_logs_contain_baseline_and_only_accepted_proposals) ... ok
+test_initial_model_review_model_and_scanner_never_overlap (test_coverage_review.CoverageReviewTests.test_initial_model_review_model_and_scanner_never_overlap) ... Validated PDFs; starting real Gemma extraction. Results are cached for resume.
+Initial model closed; reviewing omitted source excerpts with real Gemma.
+ok
+test_large_blocks_offer_every_candidate_in_worker_supported_batches (test_coverage_review.CoverageReviewTests.test_large_blocks_offer_every_candidate_in_worker_supported_batches) ... ok
+test_legacy_fragments_can_jointly_cover_a_source_span (test_coverage_review.CoverageReviewTests.test_legacy_fragments_can_jointly_cover_a_source_span) ... ok
+test_model_proposals_are_filtered_and_raw_response_is_preserved (test_coverage_review.CoverageReviewTests.test_model_proposals_are_filtered_and_raw_response_is_preserved) ... ok
+test_none_cannot_be_backfilled_by_the_evidence_gate (test_coverage_review.CoverageReviewTests.test_none_cannot_be_backfilled_by_the_evidence_gate) ... ok
+test_review_refuses_inconsistent_initial_yaml_before_model_calls (test_coverage_review.CoverageReviewTests.test_review_refuses_inconsistent_initial_yaml_before_model_calls) ... ok
+test_second_pass_preserves_original_numbering_and_does_not_retry_rejected_ids (test_coverage_review.CoverageReviewTests.test_second_pass_preserves_original_numbering_and_does_not_retry_rejected_ids) ... ok
+test_complete_selections_finish_without_source_coverage_review_items (test_description_context.DescriptionContextTests.test_complete_selections_finish_without_source_coverage_review_items) ... ok
+test_description_without_remediation_does_not_turn_none_into_requirement (test_description_context.DescriptionContextTests.test_description_without_remediation_does_not_turn_none_into_requirement) ... ok
+test_missed_lib64_change_is_flagged_separately_and_not_injected_on_resume (test_description_context.DescriptionContextTests.test_missed_lib64_change_is_flagged_separately_and_not_injected_on_resume) ... ok
+test_missing_model_requirement_still_cannot_complete_recommendation (test_description_context.DescriptionContextTests.test_missing_model_requirement_still_cannot_complete_recommendation) ... ok
+test_none_preserves_source_context_without_creating_a_requirement (test_description_context.DescriptionContextTests.test_none_preserves_source_context_without_creating_a_requirement) ... ok
+test_old_cache_coverage_metadata_cannot_restore_automatic_additions (test_description_context.DescriptionContextTests.test_old_cache_coverage_metadata_cannot_restore_automatic_additions) ... ok
+test_partial_legacy_copy_does_not_backfill_an_omitted_qualifier (test_description_context.DescriptionContextTests.test_partial_legacy_copy_does_not_backfill_an_omitted_qualifier) ... ok
+test_empty_scan_csv_retains_headers (test_executor.ExecutorTests.test_empty_scan_csv_retains_headers) ... ok
+test_export_csv (test_executor.ExecutorTests.test_export_csv) ... ok
+test_interrupted_scan_resumes_completed_content (test_executor.ExecutorTests.test_interrupted_scan_resumes_completed_content) ... ok
+test_load_difference_reports (test_executor.ExecutorTests.test_load_difference_reports) ... ok
+test_map_hadolint_rules (test_executor.ExecutorTests.test_map_hadolint_rules) ... ok
+test_no_differences_and_no_mapping_are_distinct (test_executor.ExecutorTests.test_no_differences_and_no_mapping_are_distinct) ... ok
+test_run_hadolint (test_executor.ExecutorTests.test_run_hadolint) ... ok
+test_runtime_crash_is_isolated_and_recorded (test_executor.ExecutorTests.test_runtime_crash_is_isolated_and_recorded) ... ok
+test_scan_failure_is_not_an_empty_success (test_executor.ExecutorTests.test_scan_failure_is_not_an_empty_success) ... ok
+test_traversal_zip_rejected (test_executor.ExecutorTests.test_traversal_zip_rejected) ... ok
+test_batched_results_equal_individual_results (test_executor.HadolintIntegrationTests.test_batched_results_equal_individual_results) ... ok
+test_duplicate_files_cache_and_original_paths (test_executor.HadolintIntegrationTests.test_duplicate_files_cache_and_original_paths) ... ok
+test_malformed_and_non_utf8_inputs_are_recorded (test_executor.HadolintIntegrationTests.test_malformed_and_non_utf8_inputs_are_recorded) ... ok
+test_real_full_and_selected_scans (test_executor.HadolintIntegrationTests.test_real_full_and_selected_scans) ... ok
+test_real_no_mapping_runs_all_rules (test_executor.HadolintIntegrationTests.test_real_no_mapping_runs_all_rules) ... ok
+test_archive_above_old_20000_entry_limit (test_executor.LargeArchiveTests.test_archive_above_old_20000_entry_limit) ... ok
+test_delimiter_repair_does_not_bypass_requirements_or_source_checks (test_extra_json_delimiters.ExtraJsonDelimiterTests.test_delimiter_repair_does_not_bypass_requirements_or_source_checks) ... ok
+test_observed_complete_object_with_extra_array_and_object_closers (test_extra_json_delimiters.ExtraJsonDelimiterTests.test_observed_complete_object_with_extra_array_and_object_closers) ... ok
+test_redundant_closers_remain_in_raw_cache_and_audit (test_extra_json_delimiters.ExtraJsonDelimiterTests.test_redundant_closers_remain_in_raw_cache_and_audit) ... ok
+test_text_another_value_openers_and_unbounded_delimiters_are_rejected (test_extra_json_delimiters.ExtraJsonDelimiterTests.test_text_another_value_openers_and_unbounded_delimiters_are_rejected) ... ok
+test_actual_name_only_failure_remains_rejected (test_extraction_format.ExtractionFormatTests.test_actual_name_only_failure_remains_rejected) ... ok
+test_all_styles_show_both_required_keys_and_json_escaped_title (test_extraction_format.ExtractionFormatTests.test_all_styles_show_both_required_keys_and_json_escaped_title) ... ok
+test_invalid_sample_limit_cannot_silently_create_empty_yaml (test_extraction_format.ExtractionFormatTests.test_invalid_sample_limit_cannot_silently_create_empty_yaml) ... ok
+test_retry_does_not_embed_bad_output_and_preserves_failed_audit (test_extraction_format.ExtractionFormatTests.test_retry_does_not_embed_bad_output_and_preserves_failed_audit) ... ok
+test_sampled_check_is_labeled_and_caches_valid_results_only (test_extraction_format.ExtractionFormatTests.test_sampled_check_is_labeled_and_caches_valid_results_only) ... Completed run: /tmp/tmplclokq_h
+Checking 1 recommendation(s) with all three prompt styles; diagnostic output only.
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Remediation", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Remediation", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "cache-hit"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Remediation", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Remediation", "section": 1, "sections": 1, "status": "cache-hit"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "few-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "few-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "few-shot", "source_field": "Remediation", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "few-shot", "source_field": "Remediation", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "few-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "few-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "cache-hit"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "few-shot", "source_field": "Remediation", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "few-shot", "source_field": "Remediation", "section": 1, "sections": 1, "status": "cache-hit"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "chain-of-thought", "source_field": "Description", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "chain-of-thought", "source_field": "Description", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "chain-of-thought", "source_field": "Remediation", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "chain-of-thought", "source_field": "Remediation", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "chain-of-thought", "source_field": "Description", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "chain-of-thought", "source_field": "Description", "section": 1, "sections": 1, "status": "cache-hit"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "chain-of-thought", "source_field": "Remediation", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "chain-of-thought", "source_field": "Remediation", "section": 1, "sections": 1, "status": "cache-hit"}
+ok
+test_chain_of_thought_prompt (test_extractor.ExtractorTests.test_chain_of_thought_prompt) ... ok
+test_empty_and_encrypted_pdf_rejected (test_extractor.ExtractorTests.test_empty_and_encrypted_pdf_rejected) ... ok
+test_extract_kdes (test_extractor.ExtractorTests.test_extract_kdes) ... ok
+test_few_shot_prompt (test_extractor.ExtractorTests.test_few_shot_prompt) ... ok
+test_hallucinated_requirement_is_rejected (test_extractor.ExtractorTests.test_hallucinated_requirement_is_rejected) ... ok
+test_invalid_model_output_fails_and_logs (test_extractor.ExtractorTests.test_invalid_model_output_fails_and_logs) ... ok
+test_retry_changes_prompt_and_records_correction (test_extractor.ExtractorTests.test_retry_changes_prompt_and_records_correction) ... ok
+test_section_parser_avoids_controls_table_number (test_extractor.ExtractorTests.test_section_parser_avoids_controls_table_number) ... ok
+test_shared_cache_reuses_calls_across_pair_directories (test_extractor.ExtractorTests.test_shared_cache_reuses_calls_across_pair_directories) ... ok
+test_validate_documents (test_extractor.ExtractorTests.test_validate_documents) ... ok
+test_write_llm_log (test_extractor.ExtractorTests.test_write_llm_log) ... ok
+test_zero_shot_prompt (test_extractor.ExtractorTests.test_zero_shot_prompt) ... ok
+test_full_scan_uses_matching_defaults_and_selected_scan_excludes_new_rules (test_hadolint_versions.HadolintVersionIntegrationTests.test_full_scan_uses_matching_defaults_and_selected_scan_excludes_new_rules) ... ok
+test_removed_rule_is_rejected_before_scan (test_hadolint_versions.HadolintVersionTests.test_removed_rule_is_rejected_before_scan) ... ok
+test_runner_falls_back_to_local_scanner (test_hadolint_versions.HadolintVersionTests.test_runner_falls_back_to_local_scanner) ... ok
+test_runner_prefers_installed_scanner (test_hadolint_versions.HadolintVersionTests.test_runner_prefers_installed_scanner) ... ok
+test_runner_respects_explicit_scanner_path (test_hadolint_versions.HadolintVersionTests.test_runner_respects_explicit_scanner_path) ... Real PDF extraction check passed for all three prompt styles.
+This sampled check does not establish complete PDF extraction or requirement coverage.
+Starting run: v0/v1
+Starting run: v0/v2
+Starting run: v1/v2
+Starting run: v1/v1
+Starting run: v2/v2
+ok
+test_unknown_and_prerelease_versions_are_rejected (test_hadolint_versions.HadolintVersionTests.test_unknown_and_prerelease_versions_are_rejected) ... ok
+test_version_catalogs_include_additions_and_removal (test_hadolint_versions.HadolintVersionTests.test_version_catalogs_include_additions_and_removal) ... ok
+test_cached_completion_keeps_original_raw_output_and_audit_note (test_json_completion.JsonCompletionTests.test_cached_completion_keeps_original_raw_output_and_audit_note) ... ok
+test_completion_does_not_bypass_requirements_or_source_validation (test_json_completion.JsonCompletionTests.test_completion_does_not_bypass_requirements_or_source_validation) ... ok
+test_completion_never_invents_missing_values_or_ignores_trailing_text (test_json_completion.JsonCompletionTests.test_completion_never_invents_missing_values_or_ignores_trailing_text) ... ok
+test_description_only_is_rejected_after_syntax_completion (test_json_completion.JsonCompletionTests.test_description_only_is_rejected_after_syntax_completion) ... ok
+test_only_final_object_brace_can_be_completed (test_json_completion.JsonCompletionTests.test_only_final_object_brace_can_be_completed) ... ok
+test_wrong_block_content_is_logged_and_never_completes_the_element (test_json_completion.JsonCompletionTests.test_wrong_block_content_is_logged_and_never_completes_the_element) ... ok
+test_explicit_venv_python_symlink_is_preserved (test_model.ModelEnvironmentTests.test_explicit_venv_python_symlink_is_preserved) ... ok
+test_frozen_binary_finds_active_conda_python (test_model.ModelEnvironmentTests.test_frozen_binary_finds_active_conda_python) ... ok
+test_frozen_environment_restores_original_library_path (test_model.ModelEnvironmentTests.test_frozen_environment_restores_original_library_path) ... ok
+test_invalid_precision_is_rejected_before_startup (test_model.ModelEnvironmentTests.test_invalid_precision_is_rejected_before_startup) ... ok
+test_model_cache_identity_distinguishes_precision (test_model.ModelEnvironmentTests.test_model_cache_identity_distinguishes_precision) ... ok
+test_virtualenv_takes_precedence_over_conda (test_model.ModelEnvironmentTests.test_virtualenv_takes_precedence_over_conda) ... ok
+test_embedded_payload_matches_the_reviewed_project_files (test_model_selected_update.ModelSelectedUpdateTests.test_embedded_payload_matches_the_reviewed_project_files) ... ok
+test_payload_paths_cannot_escape_the_project (test_model_selected_update.ModelSelectedUpdateTests.test_payload_paths_cannot_escape_the_project) ... ok
+test_unknown_source_revision_fails_before_any_project_file_changes (test_model_selected_update.ModelSelectedUpdateTests.test_unknown_source_revision_fails_before_any_project_file_changes) ... ok
+test_update_preserves_backups_and_a_second_apply_changes_nothing (test_model_selected_update.ModelSelectedUpdateTests.test_update_preserves_backups_and_a_second_apply_changes_nothing) ... ok
+test_apple_silicon_requires_explicit_rosetta_option (test_setup.InstallerTests.test_apple_silicon_requires_explicit_rosetta_option) ... ok
+test_native_platform_assets (test_setup.InstallerTests.test_native_platform_assets) ... ok
+test_unsupported_platform_is_rejected (test_setup.InstallerTests.test_unsupported_platform_is_rejected) ... ok
+test_model_is_closed_before_scanning_and_errors_propagate (test_setup.PipelineMemoryTests.test_model_is_closed_before_scanning_and_errors_propagate) ... All five pairs finished in run mode. Inspect output status files and quality before submission.
+Validated PDFs; starting real Gemma extraction. Results are cached for resume.
+ok
+test_description_and_remediation_are_merged_into_one_element_per_style (test_source_blocks.SourceBlockTests.test_description_and_remediation_are_merged_into_one_element_per_style) ... ok
+test_excerpt_from_the_other_block_is_rejected (test_source_blocks.SourceBlockTests.test_excerpt_from_the_other_block_is_rejected) ... ok
+test_failed_remediation_does_not_complete_yaml_and_resumes_description_cache (test_source_blocks.SourceBlockTests.test_failed_remediation_does_not_complete_yaml_and_resumes_description_cache) ... ok
+test_identical_prompts_reuse_cache_across_different_pdf_hashes (test_source_blocks.SourceBlockTests.test_identical_prompts_reuse_cache_across_different_pdf_hashes) ... ok
+test_single_field_and_unlabeled_source_are_retained (test_source_blocks.SourceBlockTests.test_single_field_and_unlabeled_source_are_retained) ... ok
+test_mismatched_model_label_is_preserved_without_redundant_retry (test_source_heading_names.SourceHeadingNameTests.test_mismatched_model_label_is_preserved_without_redundant_retry) ... ok
+test_non_object_response_cannot_be_used_as_requirements (test_source_heading_names.SourceHeadingNameTests.test_non_object_response_cannot_be_used_as_requirements) ... ok
+test_requirements_only_response_supports_the_same_bounded_punctuation_repairs (test_source_heading_names.SourceHeadingNameTests.test_requirements_only_response_supports_the_same_bounded_punctuation_repairs) ... ok
+test_source_heading_does_not_make_unmatched_or_missing_requirements_valid (test_source_heading_names.SourceHeadingNameTests.test_source_heading_does_not_make_unmatched_or_missing_requirements_valid) ... ok
+test_source_heading_is_used_when_model_label_differs_or_is_missing (test_source_heading_names.SourceHeadingNameTests.test_source_heading_is_used_when_model_label_differs_or_is_missing) ... ok
+test_bad_ids_and_arbitrary_prose_cannot_produce_source_requirements (test_source_selection.SourceSelectionTests.test_bad_ids_and_arbitrary_prose_cannot_produce_source_requirements) ... ok
+test_candidate_splitting_preserves_every_non_whitespace_character (test_source_selection.SourceSelectionTests.test_candidate_splitting_preserves_every_non_whitespace_character) ... ok
+test_description_remains_model_selected_and_can_have_no_obligations (test_source_selection.SourceSelectionTests.test_description_remains_model_selected_and_can_have_no_obligations) ... ok
+test_legacy_cache_is_reused_without_claiming_a_new_prompt_was_sent (test_source_selection.SourceSelectionTests.test_legacy_cache_is_reused_without_claiming_a_new_prompt_was_sent) ... ok
+test_numeric_responses_are_cached_with_actual_selections_and_context_policy (test_source_selection.SourceSelectionTests.test_numeric_responses_are_cached_with_actual_selections_and_context_policy) ... ok
+test_partial_model_selections_do_not_backfill_unselected_remediation (test_source_selection.SourceSelectionTests.test_partial_model_selections_do_not_backfill_unselected_remediation) ... ok
+test_prompt_builders_request_ids_and_keep_json_builders_for_old_cache_keys (test_source_selection.SourceSelectionTests.test_prompt_builders_request_ids_and_keep_json_builders_for_old_cache_keys) ... ok
+
+----------------------------------------------------------------------
+Ran 119 tests in 10.262s
+
+OK
+Completed run: /tmp/tmppb7swh9d/out

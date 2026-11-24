@@ -51,7 +51,7 @@ class PipelineMemoryTests(unittest.TestCase):
                  patch('proj_sec.cli.extract_kdes', return_value={'zero-shot': ('left.yaml', 'right.yaml')}) as extract, \
                  patch('proj_sec.cli._compare', return_value=('names.txt', 'requirements.txt', 'rules.txt')), \
                  patch('proj_sec.cli.run_hadolint', side_effect=scan):
-                result = main(['run', 'left.pdf', 'right.pdf', '--dockerfiles', 'data.zip', '--output', str(output)])
+                result = main(['run', 'left.pdf', 'right.pdf', '--dockerfiles', 'data.zip', '--output', str(output), '--no-omission-review'])
             self.assertEqual(result, 0)
             self.assertEqual(extract.call_args.kwargs['cache_dir'], Path('.cache/gemma'))
             status = json.loads((output / 'run-status.json').read_text())

@@ -1,4 +1,9 @@
-# Version 0.4.0 submission handoff
+# Packaged version 0.4.0 submission checkpoint
+
+Candidate source is version 0.5.0 with omission review. Follow
+[docs/COVERAGE_REVIEW.md](docs/COVERAGE_REVIEW.md) to regenerate and verify the
+five-pair results and native binary before replacing this checkpoint.
+The restoration commands below intentionally restore the earlier 0.4.0 artifacts.
 
 Public repository: https://github.com/mondyjackson/proj_sec
 

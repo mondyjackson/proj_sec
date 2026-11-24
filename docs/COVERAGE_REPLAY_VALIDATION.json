@@ -1,0 +1,132 @@
+{
+  "status": "verified",
+  "kind": "Offline integrated replay of actual recorded Mac model responses",
+  "source_version": "0.5.0",
+  "new_model_calls": 0,
+  "new_scanner_calls": 0,
+  "yaml_files": 30,
+  "initial_response_occurrences": 7044,
+  "comparisons": [
+    {
+      "pair": "v0-v1",
+      "style": "zero-shot",
+      "name_differences": 2,
+      "requirement_differences": 36,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v0-v1",
+      "style": "few-shot",
+      "name_differences": 2,
+      "requirement_differences": 26,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v0-v1",
+      "style": "chain-of-thought",
+      "name_differences": 2,
+      "requirement_differences": 26,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v0-v2",
+      "style": "zero-shot",
+      "name_differences": 3,
+      "requirement_differences": 42,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v0-v2",
+      "style": "few-shot",
+      "name_differences": 3,
+      "requirement_differences": 31,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v0-v2",
+      "style": "chain-of-thought",
+      "name_differences": 3,
+      "requirement_differences": 31,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v1-v1",
+      "style": "zero-shot",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v1-v1",
+      "style": "few-shot",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v1-v1",
+      "style": "chain-of-thought",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v1-v2",
+      "style": "zero-shot",
+      "name_differences": 1,
+      "requirement_differences": 6,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v1-v2",
+      "style": "few-shot",
+      "name_differences": 1,
+      "requirement_differences": 5,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v1-v2",
+      "style": "chain-of-thought",
+      "name_differences": 1,
+      "requirement_differences": 5,
+      "mapping": "NO MAPPING FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v2-v2",
+      "style": "zero-shot",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v2-v2",
+      "style": "few-shot",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "mapping_unchanged": true
+    },
+    {
+      "pair": "v2-v2",
+      "style": "chain-of-thought",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "mapping_unchanged": true
+    }
+  ],
+  "limitations": "Not a new Mac pipeline run or native-binary verification; reviewed reference is not independent semantic accuracy."
+}
