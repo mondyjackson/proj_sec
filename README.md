@@ -1,11 +1,11 @@
 # Proj Sec
 
-**Version 0.4.0 review:** requirements now contain only actual Gemma selections. The bundled final results and Mac executable are historical version 0.3.0 artifacts; they have not been regenerated for this policy. See [docs/MODEL_SELECTED_REQUIREMENTS.md](docs/MODEL_SELECTED_REQUIREMENTS.md).
+**Current submission: version 0.4.0.** Final outputs contain only actual Gemma-selected requirements, with supplemental source context kept separately. All five pipeline runs and the native Mac build are complete. See [SUBMISSION.md](SUBMISSION.md) for restoration and [docs/MODEL_SELECTED_RESULTS_REVIEW.md](docs/MODEL_SELECTED_RESULTS_REVIEW.md) for model limitations.
 
 Public repository: https://github.com/mondyjackson/proj_sec
 
-The reviewed final outputs are in [submission/final-results.zip](submission/final-results.zip).
-Restore all five pairs and all 15 scan CSV paths with:
+The reviewed version 0.4.0 final outputs are in [submission/final-results.zip](submission/final-results.zip).
+Restore all five pairs into outputs/model-selected, including all 15 scan CSV paths, with:
 
 ```bash
 python scripts/restore_final_results.py
@@ -230,8 +230,8 @@ and docs/RULE_MAPPING.md for the mapping limitations and severity handling.
 The supplied workflow runs tests on push, pull_request, and manual dispatch,
 including real Hadolint tests without needing model credentials. After tests pass, a separate job builds a Linux executable and uploads it as
 an artifact with a checksum. Actual test logs are also retained as an artifact.
-The [verified workflow run](https://github.com/mondyjackson/proj_sec/actions/runs/45426078503)
-passed all 97 tests and successfully built and smoke-tested the Linux executable.
+The [verified workflow run](https://github.com/mondyjackson/proj_sec/actions/runs/45441968501)
+passed all 103 tests and successfully built and smoke-tested the Linux executable.
 The actual test log is preserved in docs/github-actions-test-results.txt.
 
 A local git pull is not a native GitHub Actions trigger. An optional post-merge

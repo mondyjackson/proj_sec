@@ -5,7 +5,7 @@ from pathlib import Path, PurePosixPath
 import shutil
 import zipfile
 
-PREFIX = PurePosixPath('outputs/final')
+PREFIX = PurePosixPath('outputs/model-selected')
 
 
 def digest(path):
@@ -39,7 +39,7 @@ def restore(bundle, output):
                 raise ValueError(f'Existing file differs; choose a fresh output directory: {target}')
             plan.append((info, target))
         hashes = {}
-        for line in archive.read('outputs/final/csv-sha256.txt').decode().splitlines():
+        for line in archive.read(str(PREFIX / 'csv-sha256.txt')).decode().splitlines():
             sha, name = line.split(None, 1)
             rel = PurePosixPath(name.strip())
             if '..' in rel.parts or not rel.is_relative_to(PREFIX) or rel.name != 'results.csv':
@@ -54,7 +54,13 @@ def restore(bundle, output):
             hashes[target] = sha
         if len(hashes) != 15 or len(set(hashes.values())) != 1:
             raise ValueError('Expected 15 scan CSVs sharing one verified digest')
-        with archive.open('outputs/final/v0-v1/zero-shot/results.csv') as stream:
+        included_csvs = [i.filename for i in entries if PurePosixPath(i.filename).name == 'results.csv']
+        if len(included_csvs) != 1:
+            raise ValueError('Expected exactly one included scan CSV')
+        seed_relative = PurePosixPath(included_csvs[0]).relative_to(PREFIX)
+        if output / str(seed_relative) not in hashes:
+            raise ValueError('Included CSV is absent from the hash manifest')
+        with archive.open(included_csvs[0]) as stream:
             if hashlib.file_digest(stream, 'sha256').hexdigest() != next(iter(hashes.values())):
                 raise ValueError('Included CSV does not match the supplied hashes')
         for info, target in plan:
@@ -63,7 +69,7 @@ def restore(bundle, output):
             target.parent.mkdir(parents=True, exist_ok=True)
             with archive.open(info) as source, target.open('xb') as destination:
                 shutil.copyfileobj(source, destination)
-        seed = output / 'v0-v1/zero-shot/results.csv'
+        seed = output / str(seed_relative)
         for target, sha in hashes.items():
             if not target.exists():
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -77,6 +83,6 @@ if __name__ == '__main__':
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--bundle', type=Path, default=root/'submission/final-results.zip')
-    parser.add_argument('--output', type=Path, default=root/'outputs/final')
+    parser.add_argument('--output', type=Path, default=root/'outputs/model-selected')
     args = parser.parse_args()
     restore(args.bundle, args.output)

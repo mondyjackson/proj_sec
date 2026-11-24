@@ -62,7 +62,8 @@ responses are cached. Inspect all five extraction-review.json reports and the
 actual selected requirements before deciding whether to regenerate comparisons
 and scans. Prior scan CSVs must not be assumed valid for changed mappings.
 
-The published archive and native Mac executable remain version 0.3.0 evidence.
-They do not contain this policy. Rebuild the native executable and check its
-version and real model worker after the revised outputs have been reviewed.
+The final public archive and native Mac executable now contain version 0.4.0.
+All five run-mode pipelines, the user's 103 tests, and the real native Mac
+version/Gemma smoke checks completed. See MODEL_SELECTED_RESULTS_REVIEW.md,
+FINAL_RESULTS_REVIEW.md, and MAC_EXECUTABLE.md for evidence and limitations.
 No rubric score or full-document accuracy is established by unit tests.

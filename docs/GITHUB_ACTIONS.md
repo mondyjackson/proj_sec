@@ -1,36 +1,29 @@
 # Verified GitHub Actions execution
 
-Repository: https://github.com/mondyjackson/proj_sec
+Repository workflows: https://github.com/mondyjackson/proj_sec/actions
 
-Successful workflow run:
+The version 0.4.0 model-selected implementation passed this actual workflow:
+https://github.com/mondyjackson/proj_sec/actions/runs/45441968501
+
+The run tested commit 476ffa1f62fd44d3de84d031ebb55de4b4193a8a.
+All 103 tests passed in 12.691 seconds, including real Hadolint integration.
+The Linux job built the native Linux executable, checked its version and a
+comparison command, and uploaded a permissions-preserving archive and checksum.
+The user's Mac separately passed all 103 tests in 8.374 seconds and its native
+0.4.0 executable passed real Gemma smoke-model; see MAC_EXECUTABLE.md.
+
+Every subsequent push/PR also runs the full workflow. Use the workflows link
+above to inspect the final published commit's test logs and Linux artifact.
+Artifacts are named test-results and proj-sec-linux-x86_64. They contain the
+actual unittest transcript and Linux tar archive/CHECKSUMS.txt respectively.
+
+The initial historical version 0.3.0 run is retained separately:
 https://github.com/mondyjackson/proj_sec/actions/runs/45426078503
+Its unmodified 97-test artifact is preserved as github-actions-test-results.txt;
+it is historical evidence, not the current 103-test transcript.
 
-The push-triggered run tested source commit
-35d9b1a1d6ded1708adaf049757ebbc9853bfdf0. Both jobs completed successfully:
-
-- `test`: 97 tests passed in 7.802 seconds, including real Hadolint integration.
-- `build-linux`: installed pinned build dependencies, built the PyInstaller
-  executable on Ubuntu 22.04, ran its version command and a comparison smoke
-  check, then packaged and uploaded the executable with a checksum.
-
-The exact `test-results.txt` artifact was downloaded and its archive SHA-256
-verified. Its unmodified contents are retained in github-actions-test-results.txt.
-This records actual GitHub execution, separately from local or Mac test runs.
-
-Workflow artifacts on that run:
-
-| Artifact | GitHub artifact ID | ZIP bytes |
-| --- | ---: | ---: |
-| test-results | 14936767314 | 3,468 |
-| proj-sec-linux-x86_64 | 14935574951 | 52,143,530 |
-
-The Linux artifact contains proj-sec-linux-x86_64.tar.gz and CHECKSUMS.txt.
-Extracting the tar archive preserves the executable bit. It is a Linux x86_64
-binary. The separately built and runtime-tested Mac archive is also retained
-in the repository; see MAC_EXECUTABLE.md.
-
-GitHub reported artifact retention through February 22, 2027. The preserved
-test log and linked workflow provide evidence after transient console output.
-The workflow also runs on future pushes or pull requests and supports manual
-dispatch. Local git-pull testing uses the documented helper/hook because
-GitHub does not receive local pull events.
+The workflow runs on push, pull_request, and manual dispatch. Local git pull
+does not create a native GitHub Actions event. Use scripts/pull_and_test.py
+for tests after successful local pulls, including already-up-to-date pulls.
+The optional post-merge hook has narrower merge/fast-forward and virtualenv
+coverage, as documented in README.md.

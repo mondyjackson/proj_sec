@@ -36,11 +36,15 @@ This review establishes faithful extraction of actual model selections and exact
 
 Human review labels from separate diagnostics are not injected into final model requirements. Extra source text is not automatically promoted into requirements to conceal omissions.
 
-## Pending work
+## Completed final pipeline and executable
 
-The 0.4.0 comparison/scanner pipeline and native Mac executable still require their own completion and verification. The published final-results archive and Mac binary are currently historical version 0.3.0 artifacts. This document does not certify submission readiness.
+All five version 0.4.0 run-mode pipelines subsequently completed. All 15
+scans reused 178,527 cached unique results with zero new scanner executions;
+CSV hashes match the earlier independently audited bytes. Known parse/tool
+errors remain explicit. The native Mac executable returned 0.4.0 and passed
+real Gemma smoke-model on MPS/bfloat16. Final artifacts are bundled in the
+repository. See FINAL_RESULTS_REVIEW.md and MAC_EXECUTABLE.md.
 
-Full extraction validation, including all YAML hashes, is recorded in model-selected-extraction-validation.json.
-
-Uploaded extraction archive SHA-256: 0ab863a32a75d3f259c3978e7d8818d6aa8bbf1e9d5bfacbe4a4c52340fe38f0
-Code revision used: 476ffa1f62fd44d3de84d031ebb55de4b4193a8a
+Full extraction validation, including all YAML hashes, is recorded in
+model-selected-extraction-validation.json; complete final validation is in
+final-v0.4.0-validation.json. These checks do not certify complete semantic accuracy.

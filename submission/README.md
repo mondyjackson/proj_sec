@@ -1,15 +1,15 @@
-# Final output bundle
+# Version 0.4.0 final output bundle
 
-`final-results.zip` is a losslessly recompressed copy of the compact review
-bundle supplied after the five real Mac pipeline runs. Every extracted file
-is byte-identical to that supplied bundle. Use the Python helper below to
+`final-results.zip` contains the outputs/model-selected subtree of the uploaded
+version 0.4.0 compact review bundle. Every included file is byte-identical to
+that upload. Native smoke evidence is recorded separately under docs/mac-smoke-v0.4.0. Use the Python helper below to
 read the archive compression format. It includes all 30 YAMLs, per-pair actual prompts
 and raw model responses, inventories, difference reports, mapping reports,
 scanner manifests/statuses/error inventories, and one complete scan CSV.
 
 All 15 scan CSVs have the same SHA-256, recorded in the bundle. The scans use
 the same dataset, Hadolint 2.15.1 binary/configuration, and all rules. To restore
-the complete directory layout, including a separate identical CSV at every
+the complete outputs/model-selected directory layout, including a separate identical CSV at every
 pair/style output path, run from the repository root:
 
 ```bash
