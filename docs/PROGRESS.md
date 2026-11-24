@@ -7,8 +7,11 @@
 | Executor | 397,567 paths per scan; 1,598,633 CSV rows; independent 256-file rescan matches; known input/tool failures documented | Retain the explicit error limitations |
 | Tests | 97 tests passed on the user's Mac and on GitHub with real Hadolint integration; actual CI log retained | None for the published source |
 | Repository | Contributor details, public repository, final results bundle, and successful Actions artifacts verified | None for source publication |
-| Executable | Linux PyInstaller build and CLI smoke checks passed on GitHub | Complete and smoke-test native Mac build; confirm grading-platform compatibility |
+| Executable | Linux PyInstaller build/CLI checks passed on GitHub; native Mac version and real Gemma smoke passed; uploaded Mac archive hash/ARM64/mode verified | Select the artifact matching the grading platform |
 
 See FINAL_RESULTS_REVIEW.md for current data validation. Historical evidence
 such as DATASET_VALIDATION.md describes the earlier Hadolint 2.12.0 baseline;
 it does not replace the final Mac Hadolint 2.15.1 results.
+
+Final handoff: ../SUBMISSION.md. The remaining user action is final review and
+submission through the instructor form. Known scanner errors remain documented.

@@ -102,8 +102,8 @@ results are in final-results-validation.json.
 The README contains the user-provided individual contributor details. The
 public repository and successful GitHub Actions test/build run are verified;
 see GITHUB_ACTIONS.md for the actual run and retained log. The workflow built
-and smoke-tested the Linux x86_64 executable. Native Apple Silicon macOS build
-and real model-worker checks remain. The TA target operating system is
-unspecified; executables are platform-specific. Do not describe the project
-as fully submission-ready until the remaining native executable validation
-and final submission details have been checked.
+and smoke-tested the Linux x86_64 executable. The native Apple Silicon macOS build
+also passed its version and real Gemma worker checks, and its archive hash,
+ARM64 header, and executable permissions were verified; see MAC_EXECUTABLE.md.
+The TA target operating system is unspecified; select the matching platform
+artifact. Final review and form submission remain with the user.

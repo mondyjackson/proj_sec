@@ -11,5 +11,6 @@ handoff included the PDFs. TOMORROW_START_HERE.md is the earlier Mac setup guide
 its installation steps do not need repeating on the prepared Mac.
 
 GitHub Actions passed all 97 tests and built the Linux executable; see
-docs/GITHUB_ACTIONS.md. Native Mac executable verification remains before
-declaring the submission ready. See docs/PROGRESS.md.
+docs/GITHUB_ACTIONS.md. The native Mac executable also passed its version and
+real Gemma smoke checks; restore it with `python scripts/restore_macos_binary.py`.
+Use SUBMISSION.md for the final handoff and docs/MAC_EXECUTABLE.md for checksums.

@@ -37,7 +37,9 @@
   hook covers merges/fast-forwards in an activated Python virtualenv.
 - The KDE-per-recommendation design, separate output pair per style, deterministic
   context policy, partial rule mappings, and tool limitations are documented.
-- Remaining: verify the user's native Mac executable and its real model-worker
-  behavior; match the binary to the TA's platform. The TA platform is unspecified.
+- The native Mac executable returned version 0.3.0 and passed real Gemma
+  MPS/bfloat16 inference. Its uploaded archive checksum, ARM64 header, and
+  executable permissions were verified. See MAC_EXECUTABLE.md. The TA platform
+  is unspecified; select the matching Mac or Linux artifact.
 - Submit the repository, binary, and required outputs through the instructor's
   form before December 1, 2026, 11:59 PM CST.

@@ -26,7 +26,7 @@ Dockerfiles, including 2,546 parser failures and two files sharing a reproducibl
 upstream runtime error. They are explicitly flagged, not reported as clean scans.
 See docs/FINAL_RESULTS_REVIEW.md. Actual GitHub Actions tests and the Linux
 build succeeded; see [docs/GITHUB_ACTIONS.md](docs/GITHUB_ACTIONS.md). Native
-Mac executable verification remains required. The older 2.12.0 dataset baseline is
+Mac version and real Gemma worker checks also passed; see [docs/MAC_EXECUTABLE.md](docs/MAC_EXECUTABLE.md). The older 2.12.0 dataset baseline is
 separate historical evidence in docs/DATASET_VALIDATION.md.
 
 ## Team
@@ -254,6 +254,17 @@ receive events from a local pull; the workflow and local helper cover their
 respective environments explicitly.
 
 ## Executable
+
+To restore the exact verified Apple Silicon Mac build and original archive:
+
+```bash
+python scripts/restore_macos_binary.py
+./dist/proj-sec --version
+```
+
+See [SUBMISSION.md](SUBMISSION.md) for the complete handoff, result restoration,
+and matching platform artifacts. To build locally instead:
+
 
 ```bash
 python -m pip install -r requirements-build.txt

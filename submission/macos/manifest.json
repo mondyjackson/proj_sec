@@ -1,0 +1,29 @@
+{
+  "archive": "proj-sec-macos-arm64.tar.gz",
+  "archive_bytes": 28837069,
+  "archive_sha256": "8a8fddc8deeab94112ea208d3354fec00cb5355daa8136a7dfc7f757b4586a76",
+  "binary": "proj-sec",
+  "binary_sha256": "358ddf54bf6f10dd62145fe40b1b1b0e9147b0fc5b101e0595b4e98ee8030a30",
+  "binary_bytes": 29240880,
+  "binary_mode": "0755",
+  "architecture": "macOS ARM64",
+  "version": "0.3.0",
+  "parts": [
+    {
+      "name": "proj-sec-macos-arm64.tar.gz.part001",
+      "bytes": 10000000,
+      "sha256": "cc105210dbd4aa0ea80ebe54e2785ded0baea2cc139535194021dd194b4f731d"
+    },
+    {
+      "name": "proj-sec-macos-arm64.tar.gz.part002",
+      "bytes": 10000000,
+      "sha256": "2e2ca60bd99f6b070c108dd49eaecd95c55374bd7f53799f0d222f4abd82b03f"
+    },
+    {
+      "name": "proj-sec-macos-arm64.tar.gz.part003",
+      "bytes": 8837069,
+      "sha256": "9bcf80170d2dbffd647207ff4e6f54c84c2cb7882a188c43f3e22745b42dd63d"
+    }
+  ],
+  "runtime_validation": "User ran the built executable on native Apple Silicon macOS: --version returned 0.3.0 and smoke-model with real Gemma on MPS/bfloat16 passed."
+}

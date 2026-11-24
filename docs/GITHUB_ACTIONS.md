@@ -26,7 +26,8 @@ Workflow artifacts on that run:
 
 The Linux artifact contains proj-sec-linux-x86_64.tar.gz and CHECKSUMS.txt.
 Extracting the tar archive preserves the executable bit. It is a Linux x86_64
-binary; a native Mac executable must be built and checked separately on macOS.
+binary. The separately built and runtime-tested Mac archive is also retained
+in the repository; see MAC_EXECUTABLE.md.
 
 GitHub reported artifact retention through February 22, 2027. The preserved
 test log and linked workflow provide evidence after transient console output.
