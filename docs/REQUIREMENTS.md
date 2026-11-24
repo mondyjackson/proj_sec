@@ -16,24 +16,28 @@
 | 3.3 | run_hadolint | proj_sec/executor.py | test_run_hadolint and real Hadolint integration tests |
 | 3.4 | export_csv | proj_sec/executor.py | test_export_csv |
 
-## Historical checklist
+## Acceptance evidence
 
-The checklist below describes the earlier development checkpoint. The current
-extractor, comparator, scanner, and contributor acceptance evidence is in
-FINAL_RESULTS_REVIEW.md and PROGRESS.md. The real five-pair runs and contributor
-metadata are now complete; executable verification and actual GitHub Actions
-execution remain to be confirmed separately.
-
-- The authenticated model smoke test passed on the Mac. Full-document extraction remains pending.
-- Run real Gemma extraction with all three styles and review coverage, including context added by the complete-Remediation policy.
-- Run final mapped scans after Gemma extraction; the standalone full-dataset baseline is regenerated and independently verified.
-- Run the five specified PDF pair combinations, including both identical pairs.
-- Review whether the instructor accepts a KDE per CIS recommendation and a
-  separate pair of YAMLs per prompt style. The assignment leaves strategy
-  selection/combination underspecified.
-- Confirm the intended git-pull automation behavior. GitHub has no native
-  local-pull event; CI and an optional local hook/helper are supplied.
-- Confirm the TA's operating system and test a matching PyInstaller build.
-- Enter the team's names, BannerIDs, and university email addresses.
-- Create the public GitHub repository and obtain actual successful Actions logs.
-- Submit through the instructor's form before December 1, 2026, 11:59 PM CST.
+- Task 1: real authenticated Gemma extraction completed for all five pairs and
+  three prompt styles. All 30 YAMLs and actual prompt/response audits reconcile
+  with the source. Model selections and source context are recorded separately.
+- Task 2: all 15 comparator report sets were regenerated independently and
+  matched. Both identical-document pairs produce the specified no-difference
+  markers. See FINAL_RESULTS_REVIEW.md.
+- Task 3: all 397,567 original paths are accounted for in each final scan.
+  Parser findings and the two upstream crash inputs are explicitly reported.
+  The final 1,598,633-row CSV was validated, and an independent 256-file rescan
+  matched. All 15 CSV hashes agree; the bundled results helper restores them.
+- Task 4: contributor metadata is complete; the repository is public; the
+  published GitHub workflow passed all 97 tests and produced the Linux binary
+  and checksum artifact. Actual test logs are preserved; see GITHUB_ACTIONS.md.
+- GitHub has no native local-pull event. CI runs on push, pull_request, and
+  manual events. scripts/pull_and_test.py tests successful local pulls with the
+  active interpreter, including already-up-to-date pulls; an optional post-merge
+  hook covers merges/fast-forwards in an activated Python virtualenv.
+- The KDE-per-recommendation design, separate output pair per style, deterministic
+  context policy, partial rule mappings, and tool limitations are documented.
+- Remaining: verify the user's native Mac executable and its real model-worker
+  behavior; match the binary to the TA's platform. The TA platform is unspecified.
+- Submit the repository, binary, and required outputs through the instructor's
+  form before December 1, 2026, 11:59 PM CST.

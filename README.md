@@ -24,8 +24,9 @@ The remote model revision is pinned to
 outputs have been reviewed. The final Hadolint 2.15.1 scans account for 397,567
 Dockerfiles, including 2,546 parser failures and two files sharing a reproducible
 upstream runtime error. They are explicitly flagged, not reported as clean scans.
-See docs/FINAL_RESULTS_REVIEW.md. Public GitHub Actions logs and final
-executable verification remain required. The older 2.12.0 dataset baseline is
+See docs/FINAL_RESULTS_REVIEW.md. Actual GitHub Actions tests and the Linux
+build succeeded; see [docs/GITHUB_ACTIONS.md](docs/GITHUB_ACTIONS.md). Native
+Mac executable verification remains required. The older 2.12.0 dataset baseline is
 separate historical evidence in docs/DATASET_VALIDATION.md.
 
 ## Team
@@ -229,8 +230,9 @@ and docs/RULE_MAPPING.md for the mapping limitations and severity handling.
 The supplied workflow runs tests on push, pull_request, and manual dispatch,
 including real Hadolint tests without needing model credentials. After tests pass, a separate job builds a Linux executable and uploads it as
 an artifact with a checksum. Actual test logs are also retained as an artifact.
-The workflow has not been verified on GitHub until the repository is uploaded
-and a run succeeds.
+The [verified workflow run](https://github.com/mondyjackson/proj_sec/actions/runs/45426078503)
+passed all 97 tests and successfully built and smoke-tested the Linux executable.
+The actual test log is preserved in docs/github-actions-test-results.txt.
 
 A local git pull is not a native GitHub Actions trigger. An optional post-merge
 hook runs tests after pulls that merge or fast-forward new commits:

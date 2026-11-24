@@ -99,10 +99,11 @@ results are in final-results-validation.json.
 
 ## Submission work still required
 
-The README contains the user-provided individual contributor details. A public
-GitHub repository, actual successful GitHub Actions logs, and final executable
-verification still need completion. The prepared workflow builds Linux x86_64;
-the user can also build and verify the native Apple Silicon macOS executable.
-The TA's target operating system is unspecified. Executables are platform-specific.
-Do not describe the project as fully submission-ready until these remaining
-artifacts and their validation have been checked.
+The README contains the user-provided individual contributor details. The
+public repository and successful GitHub Actions test/build run are verified;
+see GITHUB_ACTIONS.md for the actual run and retained log. The workflow built
+and smoke-tested the Linux x86_64 executable. Native Apple Silicon macOS build
+and real model-worker checks remain. The TA target operating system is
+unspecified; executables are platform-specific. Do not describe the project
+as fully submission-ready until the remaining native executable validation
+and final submission details have been checked.

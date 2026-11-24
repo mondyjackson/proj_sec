@@ -10,5 +10,6 @@ Place authorized copies in data/ to rerun the pipeline. The private source
 handoff included the PDFs. TOMORROW_START_HERE.md is the earlier Mac setup guide;
 its installation steps do not need repeating on the prepared Mac.
 
-Native Mac executable verification and successful published GitHub Actions logs
-remain required before declaring the submission ready. See docs/PROGRESS.md.
+GitHub Actions passed all 97 tests and built the Linux executable; see
+docs/GITHUB_ACTIONS.md. Native Mac executable verification remains before
+declaring the submission ready. See docs/PROGRESS.md.
