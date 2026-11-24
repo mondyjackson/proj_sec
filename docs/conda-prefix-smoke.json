@@ -1,0 +1,8 @@
+{
+  "interpreter_discovery_checked": true,
+  "fixture": "CONDA_PREFIX points to local test environment; actual Mac Conda execution remains pending.",
+  "worker_started": true,
+  "real_model_run_completed": false,
+  "blocker": "Hugging Face gated access/login",
+  "exit_code": 1
+}

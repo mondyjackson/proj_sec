@@ -1,0 +1,4 @@
+# Installed and import-checked on Linux CPU; authenticated Gemma inference remains pending.
+torch==2.9.0
+transformers==4.57.1
+accelerate==1.11.0

@@ -1,0 +1,16 @@
+{
+  "target": "Apple M1 / macOS 26.3 / Python 3.12 arm64",
+  "direct_pinned_package_wheels_available": true,
+  "cross_platform_transitive_resolver_verified": false,
+  "why_transitive_not_claimed": "A Linux-hosted pip cross-download evaluates Linux dependency markers. Direct-package wheel availability was checked separately with --no-deps. Full install/import checks were performed on Linux only.",
+  "native_mac_execution_verified": false,
+  "mps_bfloat16_inference_verified": false,
+  "next_user_checks": [
+    "native arm64 Python",
+    "core tests and PDF pair preparation",
+    "Rosetta for pinned Hadolint",
+    "Hugging Face model access/login",
+    "MPS bfloat16 probe",
+    "real Gemma smoke test"
+  ]
+}

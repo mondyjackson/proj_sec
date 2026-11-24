@@ -1,0 +1,46 @@
+Collecting pypdf==6.21.4 (from -r requirements-core.txt (line 1))
+  Downloading pypdf-6.21.4-py3-none-any.whl.metadata (7.6 kB)
+Collecting PyYAML==6.0.3 (from -r requirements-core.txt (line 2))
+  Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting pandas==2.2.3 (from -r requirements-core.txt (line 3))
+  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+Collecting numpy==2.5.5 (from -r requirements-core.txt (line 4))
+  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting python-dateutil==4.0.0 (from -r requirements-core.txt (line 5))
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pytz==2026.6 (from -r requirements-core.txt (line 6))
+  Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata==2026.6 (from -r requirements-core.txt (line 7))
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting pyinstaller==6.22.3 (from -r requirements-build.txt (line 2))
+  Downloading pyinstaller-6.22.3-py3-none-manylinux2014_x86_64.whl.metadata (8.5 kB)
+Collecting pyinstaller-hooks-contrib==2026.10 (from -r requirements-build.txt (line 3))
+  Downloading pyinstaller_hooks_contrib-2026.10-py3-none-any.whl.metadata (16 kB)
+Collecting altgraph==0.17.5 (from -r requirements-build.txt (line 4))
+  Downloading altgraph-0.17.5-py2.py3-none-any.whl.metadata (7.5 kB)
+Collecting packaging==26.3 (from -r requirements-build.txt (line 5))
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting setuptools==84.2.1 (from -r requirements-build.txt (line 6))
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Downloading pypdf-6.21.4-py3-none-any.whl (410 kB)
+Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 7.0 MB/s eta 0:00:00
+Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 52.3 MB/s eta 0:00:00
+Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 59.1 MB/s eta 0:00:00
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Downloading pyinstaller-6.22.3-py3-none-manylinux2014_x86_64.whl (764 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 765.0/765.0 kB 10.2 MB/s eta 0:00:00
+Downloading pyinstaller_hooks_contrib-2026.10-py3-none-any.whl (463 kB)
+Downloading altgraph-0.17.5-py2.py3-none-any.whl (21 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 12.6 MB/s eta 0:00:00
+Installing collected packages: pytz, altgraph, tzdata, setuptools, PyYAML, pypdf, packaging, numpy, python-dateutil, pyinstaller-hooks-contrib, pyinstaller, pandas
+Successfully installed PyYAML-6.0.3 altgraph-0.17.5 numpy-2.5.5 packaging-26.3 pandas-2.2.3 pyinstaller-6.22.3 pyinstaller-hooks-contrib-2026.10 pypdf-6.21.4 python-dateutil-4.0.0 pytz-2026.6 setuptools-84.2.1 tzdata-2026.6
+
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python -m pip install --upgrade pip

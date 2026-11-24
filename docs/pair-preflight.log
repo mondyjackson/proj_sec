@@ -1,0 +1,96 @@
+Starting prepare: v0/v1
+[
+  {
+    "side": "left",
+    "file": "docker-cis-v0.pdf",
+    "sha256": "bb2b41d713c07d7886e6644158d1c92b90ab1c34a642d4596c7d8c064975f54b",
+    "pages": 288,
+    "recommendations": 117,
+    "source_sections": "left-docker-cis-v0-source-sections.json"
+  },
+  {
+    "side": "right",
+    "file": "docker-cis-v1.pdf",
+    "sha256": "050e076415f7e2a81c48853f26f42fd24eab0dd40fe1a756f5e7e8639d09ee24",
+    "pages": 293,
+    "recommendations": 117,
+    "source_sections": "right-docker-cis-v1-source-sections.json"
+  }
+]
+Starting prepare: v0/v2
+[
+  {
+    "side": "left",
+    "file": "docker-cis-v0.pdf",
+    "sha256": "bb2b41d713c07d7886e6644158d1c92b90ab1c34a642d4596c7d8c064975f54b",
+    "pages": 288,
+    "recommendations": 117,
+    "source_sections": "left-docker-cis-v0-source-sections.json"
+  },
+  {
+    "side": "right",
+    "file": "docker-cis-v2.pdf",
+    "sha256": "a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07",
+    "pages": 300,
+    "recommendations": 118,
+    "source_sections": "right-docker-cis-v2-source-sections.json"
+  }
+]
+Starting prepare: v1/v2
+[
+  {
+    "side": "left",
+    "file": "docker-cis-v1.pdf",
+    "sha256": "050e076415f7e2a81c48853f26f42fd24eab0dd40fe1a756f5e7e8639d09ee24",
+    "pages": 293,
+    "recommendations": 117,
+    "source_sections": "left-docker-cis-v1-source-sections.json"
+  },
+  {
+    "side": "right",
+    "file": "docker-cis-v2.pdf",
+    "sha256": "a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07",
+    "pages": 300,
+    "recommendations": 118,
+    "source_sections": "right-docker-cis-v2-source-sections.json"
+  }
+]
+Starting prepare: v1/v1
+[
+  {
+    "side": "left",
+    "file": "docker-cis-v1.pdf",
+    "sha256": "050e076415f7e2a81c48853f26f42fd24eab0dd40fe1a756f5e7e8639d09ee24",
+    "pages": 293,
+    "recommendations": 117,
+    "source_sections": "left-docker-cis-v1-source-sections.json"
+  },
+  {
+    "side": "right",
+    "file": "docker-cis-v1.pdf",
+    "sha256": "050e076415f7e2a81c48853f26f42fd24eab0dd40fe1a756f5e7e8639d09ee24",
+    "pages": 293,
+    "recommendations": 117,
+    "source_sections": "right-docker-cis-v1-source-sections.json"
+  }
+]
+Starting prepare: v2/v2
+[
+  {
+    "side": "left",
+    "file": "docker-cis-v2.pdf",
+    "sha256": "a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07",
+    "pages": 300,
+    "recommendations": 118,
+    "source_sections": "left-docker-cis-v2-source-sections.json"
+  },
+  {
+    "side": "right",
+    "file": "docker-cis-v2.pdf",
+    "sha256": "a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07",
+    "pages": 300,
+    "recommendations": 118,
+    "source_sections": "right-docker-cis-v2-source-sections.json"
+  }
+]
+All five pairs finished in prepare mode. Inspect output status files and quality before submission.

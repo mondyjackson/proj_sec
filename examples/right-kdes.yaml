@@ -1,0 +1,8 @@
+element1:
+  name: Ensure that a user for the container has been created
+  requirements:
+    - Containers should run as a non-root user.
+element2:
+  name: Ensure that COPY is used instead of ADD in Dockerfiles
+  requirements:
+    - Use COPY for local files and directories.

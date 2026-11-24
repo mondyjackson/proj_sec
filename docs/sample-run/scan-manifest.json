@@ -1,0 +1,11 @@
+{
+  "version": "Haskell Dockerfile Linter 2.12.0",
+  "selected_rules": [
+    "DL3020"
+  ],
+  "scanned": [
+    "nested/Dockerfile"
+  ],
+  "skipped": [],
+  "finding_count": 1
+}

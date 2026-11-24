@@ -1,0 +1,7 @@
+pypdf==6.21.4
+PyYAML==6.0.3
+pandas==2.2.3
+numpy==2.5.5
+python-dateutil==4.0.0
+pytz==2026.6
+tzdata==2026.6

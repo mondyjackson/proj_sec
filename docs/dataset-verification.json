@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "candidate_files": 397567,
+  "unique_contents": 178527,
+  "csv_rows": 1556774,
+  "findings": 2215013,
+  "file_statuses": {
+    "scanned": 394875,
+    "parse-error": 2690,
+    "tool-error": 2
+  },
+  "every_csv_row_matches_raw_evidence": true,
+  "all_original_file_paths_are_unique": true
+}

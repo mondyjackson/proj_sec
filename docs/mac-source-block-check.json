@@ -1,0 +1,63 @@
+{
+  "evidence_source": "Terminal output supplied by Jackson in this conversation",
+  "diagnostic": "Proj_Sec_Section_Check.py",
+  "model": "google/gemma-3-1b-it",
+  "device": "mps",
+  "dtype": "bfloat16",
+  "document": "docker-cis-v0.pdf",
+  "cis_id": "1.1.1",
+  "passed": 6,
+  "requests": 6,
+  "scope": "Only the first recommendation; full-document extraction is not verified.",
+  "results": [
+    {
+      "prompt_type": "zero-shot",
+      "source_field": "Description",
+      "status": "validated",
+      "requirements": [
+        "All Docker containers and their data and metadata is stored under /var/lib/docker directory.",
+        "By default, /var/lib/docker should be mounted under either the / or /var partitions dependent on how the Linux operating system in use is configured."
+      ]
+    },
+    {
+      "prompt_type": "zero-shot",
+      "source_field": "Remediation",
+      "status": "validated",
+      "requirements": [
+        "For new installations, you should create a separate partition for the /var/lib/docker mount point. For systems which have already been installed, you should use the Logical Volume Manager (LVM) within Linux to create a new partition."
+      ]
+    },
+    {
+      "prompt_type": "few-shot",
+      "source_field": "Description",
+      "status": "validated",
+      "requirements": [
+        "All Docker containers and their data and metadata is stored under /var/lib/docker directory. By default, /var/lib/docker should be mounted under either the / or /var partitions dependent on how the Linux operating system in use is configured."
+      ]
+    },
+    {
+      "prompt_type": "few-shot",
+      "source_field": "Remediation",
+      "status": "validated",
+      "requirements": [
+        "For new installations, you should create a separate partition for the /var/lib/docker mount point. For systems which have already been installed, you should use the Logical Volume Manager (LVM) within Linux to create a new partition."
+      ]
+    },
+    {
+      "prompt_type": "chain-of-thought",
+      "source_field": "Description",
+      "status": "validated",
+      "requirements": [
+        "All Docker containers and their data and metadata is stored under /var/lib/docker directory. By default, /var/lib/docker should be mounted under either the / or /var partitions dependent on how the Linux operating system in use is configured."
+      ]
+    },
+    {
+      "prompt_type": "chain-of-thought",
+      "source_field": "Remediation",
+      "status": "validated",
+      "requirements": [
+        "For new installations, you should create a separate partition for the /var/lib/docker mount point. For systems which have already been installed, you should use the Logical Volume Manager (LVM) within Linux to create a new partition."
+      ]
+    }
+  ]
+}

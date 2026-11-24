@@ -1,0 +1,1 @@
+ERROR: Gemma worker exited; inspect gemma-worker.log for installation/access errors

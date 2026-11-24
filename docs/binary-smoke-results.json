@@ -1,0 +1,52 @@
+[
+  {
+    "command": [
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "0.3.0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "compare",
+      "examples/left-kdes.yaml",
+      "examples/right-kdes.yaml",
+      "--output",
+      "/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke"
+    ],
+    "exit_code": 0,
+    "stdout": "/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke/element-names.txt\n/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke/element-requirements.txt\n/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke/hadolint-rules.txt\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "scan",
+      "/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke/element-names.txt",
+      "/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke/element-requirements.txt",
+      "--dockerfiles",
+      "outputs/real-dataset-sample.zip",
+      "--hadolint",
+      "tools/hadolint",
+      "--output",
+      "/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke",
+      "--scan-cache",
+      ".cache/binary-smoke.sqlite3"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"candidates\": 1, \"unique_completed\": 1, \"unique_executed\": 0, \"unique_cached\": 1, \"elapsed_seconds\": 0.2}\n{\"candidates\": 256, \"unique_completed\": 256, \"unique_executed\": 0, \"unique_cached\": 256, \"elapsed_seconds\": 0.2}\n/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke/results.csv\nScan status: completed-with-input-errors; see scan-manifest.json\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "prepare",
+      "data/docker-cis-v0.pdf",
+      "data/docker-cis-v2.pdf",
+      "--output",
+      "/workspace/scratch/88a5cdabaadf/proj_sec/outputs/binary-smoke/prepare"
+    ],
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"side\": \"left\",\n    \"file\": \"docker-cis-v0.pdf\",\n    \"sha256\": \"bb2b41d713c07d7886e6644158d1c92b90ab1c34a642d4596c7d8c064975f54b\",\n    \"pages\": 288,\n    \"recommendations\": 117,\n    \"source_sections\": \"left-docker-cis-v0-source-sections.json\"\n  },\n  {\n    \"side\": \"right\",\n    \"file\": \"docker-cis-v2.pdf\",\n    \"sha256\": \"a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07\",\n    \"pages\": 300,\n    \"recommendations\": 118,\n    \"source_sections\": \"right-docker-cis-v2-source-sections.json\"\n  }\n]\n",
+    "stderr": ""
+  }
+]

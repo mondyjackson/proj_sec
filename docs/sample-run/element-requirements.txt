@@ -1,0 +1,2 @@
+Ensure that COPY is used instead of ADD in Dockerfiles,Use COPY for local files and directories.
+Ensure that COPY is used instead of ADD in Dockerfiles,Use COPY for local files.

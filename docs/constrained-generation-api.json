@@ -1,0 +1,47 @@
+{
+  "test_scope": "Tiny randomly initialized Gemma3ForCausalLM and character tokenizer; API/protocol regression only",
+  "required_pretrained_model_tested": false,
+  "runtime": {
+    "torch": "2.9.0+cpu",
+    "transformers": "4.57.1"
+  },
+  "unconstrained_output_with_invalid_id_bias": "99",
+  "single_candidate_constraint_output": "1",
+  "results": [
+    {
+      "candidate_count": 1,
+      "allow_empty": false,
+      "output": "1",
+      "allowed_completion": true,
+      "worker_constraint_acknowledged": true
+    },
+    {
+      "candidate_count": 2,
+      "allow_empty": false,
+      "output": "2",
+      "allowed_completion": true,
+      "worker_constraint_acknowledged": true
+    },
+    {
+      "candidate_count": 5,
+      "allow_empty": false,
+      "output": "2",
+      "allowed_completion": true,
+      "worker_constraint_acknowledged": true
+    },
+    {
+      "candidate_count": 10,
+      "allow_empty": false,
+      "output": "9",
+      "allowed_completion": true,
+      "worker_constraint_acknowledged": true
+    },
+    {
+      "candidate_count": 2,
+      "allow_empty": true,
+      "output": "2",
+      "allowed_completion": true,
+      "worker_constraint_acknowledged": true
+    }
+  ]
+}

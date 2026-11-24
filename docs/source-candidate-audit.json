@@ -1,0 +1,23 @@
+[
+  {
+    "file": "docker-cis-v0.pdf",
+    "recommendations": 117,
+    "source_blocks": 234,
+    "all_source_characters_preserved": true,
+    "maximum_excerpts_in_one_block": 10
+  },
+  {
+    "file": "docker-cis-v1.pdf",
+    "recommendations": 117,
+    "source_blocks": 234,
+    "all_source_characters_preserved": true,
+    "maximum_excerpts_in_one_block": 10
+  },
+  {
+    "file": "docker-cis-v2.pdf",
+    "recommendations": 118,
+    "source_blocks": 236,
+    "all_source_characters_preserved": true,
+    "maximum_excerpts_in_one_block": 10
+  }
+]

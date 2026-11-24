@@ -1,0 +1,75 @@
+{
+  "evidence_source": "Terminal output supplied by Jackson in this conversation",
+  "model": "google/gemma-3-1b-it",
+  "device": "mps",
+  "dtype": "bfloat16",
+  "format_valid": 6,
+  "requests": 6,
+  "coverage_warning": "All replies were valid ID lists; none of the 2.2 selections covered all five source excerpts.",
+  "results": [
+    {
+      "cis_id": "1.1.1",
+      "prompt_type": "zero-shot",
+      "source_field": "Remediation",
+      "raw_output": "1,2\n",
+      "selected_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "cis_id": "1.1.1",
+      "prompt_type": "few-shot",
+      "source_field": "Remediation",
+      "raw_output": "1,2\n",
+      "selected_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "cis_id": "1.1.1",
+      "prompt_type": "chain-of-thought",
+      "source_field": "Remediation",
+      "raw_output": "1,2\n",
+      "selected_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "cis_id": "2.2",
+      "prompt_type": "zero-shot",
+      "source_field": "Remediation",
+      "raw_output": "1, 3\n",
+      "selected_ids": [
+        1,
+        3
+      ],
+      "selection_complete": false
+    },
+    {
+      "cis_id": "2.2",
+      "prompt_type": "few-shot",
+      "source_field": "Remediation",
+      "raw_output": "1,3,5\n",
+      "selected_ids": [
+        1,
+        3,
+        5
+      ],
+      "selection_complete": false
+    },
+    {
+      "cis_id": "2.2",
+      "prompt_type": "chain-of-thought",
+      "source_field": "Remediation",
+      "raw_output": "1, 4\n",
+      "selected_ids": [
+        1,
+        4
+      ],
+      "selection_complete": false
+    }
+  ]
+}

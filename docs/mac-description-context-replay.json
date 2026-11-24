@@ -1,0 +1,126 @@
+{
+  "errors": [],
+  "comparisons": [
+    {
+      "pair": "v0-v1",
+      "style": "zero-shot",
+      "name_differences": 2,
+      "requirement_differences": 27,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v0-v1",
+      "style": "few-shot",
+      "name_differences": 2,
+      "requirement_differences": 27,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v0-v1",
+      "style": "chain-of-thought",
+      "name_differences": 2,
+      "requirement_differences": 27,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v0-v2",
+      "style": "zero-shot",
+      "name_differences": 3,
+      "requirement_differences": 32,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v0-v2",
+      "style": "few-shot",
+      "name_differences": 3,
+      "requirement_differences": 32,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v0-v2",
+      "style": "chain-of-thought",
+      "name_differences": 3,
+      "requirement_differences": 32,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v1-v1",
+      "style": "zero-shot",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "identical_yaml": true
+    },
+    {
+      "pair": "v1-v1",
+      "style": "few-shot",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "identical_yaml": true
+    },
+    {
+      "pair": "v1-v1",
+      "style": "chain-of-thought",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "identical_yaml": true
+    },
+    {
+      "pair": "v1-v2",
+      "style": "zero-shot",
+      "name_differences": 1,
+      "requirement_differences": 5,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v1-v2",
+      "style": "few-shot",
+      "name_differences": 1,
+      "requirement_differences": 5,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v1-v2",
+      "style": "chain-of-thought",
+      "name_differences": 1,
+      "requirement_differences": 5,
+      "mapping": "NO MAPPING FOUND",
+      "identical_yaml": false
+    },
+    {
+      "pair": "v2-v2",
+      "style": "zero-shot",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "identical_yaml": true
+    },
+    {
+      "pair": "v2-v2",
+      "style": "few-shot",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "identical_yaml": true
+    },
+    {
+      "pair": "v2-v2",
+      "style": "chain-of-thought",
+      "name_differences": 0,
+      "requirement_differences": 0,
+      "mapping": "NO DIFFERENCES FOUND",
+      "identical_yaml": true
+    }
+  ],
+  "verification_mode": "offline replay of supplied real Mac responses; no new inference or final scans"
+}

@@ -1,0 +1,13 @@
+{
+  "real_model_run_completed": false,
+  "exit_code": 1,
+  "blocker": "Hugging Face returned GatedRepoError/401 for google/gemma-3-1b-it; the user must obtain access and authenticate.",
+  "external_worker_started": true,
+  "model_dependencies_imported": true,
+  "torch": "2.9.0+cpu",
+  "transformers": "4.57.1",
+  "accelerate": "1.11.0",
+  "pinned_model_revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+  "tested_entrypoint": "rebuilt Linux PyInstaller executable",
+  "actual_mac_inference_verified": false
+}

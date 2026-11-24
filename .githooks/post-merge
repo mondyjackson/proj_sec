@@ -1,0 +1,12 @@
+#!/bin/sh
+# Installed explicitly using scripts/enable_pull_tests.py.
+set -eu
+if [ -z "${VIRTUAL_ENV:-}" ]; then
+  echo 'Activate the project virtual environment before pulling with test hooks enabled.' >&2
+  exit 1
+fi
+if [ -x "$VIRTUAL_ENV/bin/python" ]; then
+  "$VIRTUAL_ENV/bin/python" -m unittest discover -s tests -v
+else
+  "$VIRTUAL_ENV/Scripts/python.exe" -m unittest discover -s tests -v
+fi

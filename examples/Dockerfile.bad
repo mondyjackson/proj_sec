@@ -1,0 +1,5 @@
+FROM ubuntu:latest
+USER root
+ADD hello.txt /hello.txt
+RUN apt-get update
+RUN apt-get install -y curl

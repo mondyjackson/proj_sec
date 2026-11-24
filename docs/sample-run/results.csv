@@ -1,0 +1,2 @@
+FilePath,DefaultSeverity,RULEID,COUNT
+nested/Dockerfile,error,DL3020,1

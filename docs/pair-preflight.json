@@ -1,0 +1,77 @@
+[
+  {
+    "pair": "v0-v1",
+    "documents": [
+      "docker-cis-v0.pdf",
+      "docker-cis-v1.pdf"
+    ],
+    "recommendations": [
+      117,
+      117
+    ],
+    "sha256": [
+      "bb2b41d713c07d7886e6644158d1c92b90ab1c34a642d4596c7d8c064975f54b",
+      "050e076415f7e2a81c48853f26f42fd24eab0dd40fe1a756f5e7e8639d09ee24"
+    ]
+  },
+  {
+    "pair": "v0-v2",
+    "documents": [
+      "docker-cis-v0.pdf",
+      "docker-cis-v2.pdf"
+    ],
+    "recommendations": [
+      117,
+      118
+    ],
+    "sha256": [
+      "bb2b41d713c07d7886e6644158d1c92b90ab1c34a642d4596c7d8c064975f54b",
+      "a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07"
+    ]
+  },
+  {
+    "pair": "v1-v1",
+    "documents": [
+      "docker-cis-v1.pdf",
+      "docker-cis-v1.pdf"
+    ],
+    "recommendations": [
+      117,
+      117
+    ],
+    "sha256": [
+      "050e076415f7e2a81c48853f26f42fd24eab0dd40fe1a756f5e7e8639d09ee24",
+      "050e076415f7e2a81c48853f26f42fd24eab0dd40fe1a756f5e7e8639d09ee24"
+    ]
+  },
+  {
+    "pair": "v1-v2",
+    "documents": [
+      "docker-cis-v1.pdf",
+      "docker-cis-v2.pdf"
+    ],
+    "recommendations": [
+      117,
+      118
+    ],
+    "sha256": [
+      "050e076415f7e2a81c48853f26f42fd24eab0dd40fe1a756f5e7e8639d09ee24",
+      "a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07"
+    ]
+  },
+  {
+    "pair": "v2-v2",
+    "documents": [
+      "docker-cis-v2.pdf",
+      "docker-cis-v2.pdf"
+    ],
+    "recommendations": [
+      118,
+      118
+    ],
+    "sha256": [
+      "a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07",
+      "a4a7cb300bec013db6ad8e3578d8709bda99748616b497c806523d8d7edccb07"
+    ]
+  }
+]

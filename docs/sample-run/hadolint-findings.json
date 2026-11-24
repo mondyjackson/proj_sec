@@ -1,0 +1,11 @@
+[
+  {
+    "code": "DL3020",
+    "column": 1,
+    "file": "nested/Dockerfile",
+    "level": "error",
+    "line": 3,
+    "message": "Use COPY instead of ADD for files and folders",
+    "default_severity": "error"
+  }
+]

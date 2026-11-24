@@ -1,0 +1,9 @@
+{
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "pyinstaller": "6.22.3",
+  "binary_sha256": "87bea925fe368b5d7597a65be7c5c673752c3968028bf2443181e575437f4647",
+  "size_bytes": 44245328,
+  "model_is_external": true,
+  "version": "0.3.0"
+}

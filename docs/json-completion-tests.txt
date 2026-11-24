@@ -1,0 +1,93 @@
+Linux verification with Hadolint 2.15.1. Actual Mac model inference still requires the diagnostic.
+
+test_command_case_is_not_erased (test_comparator.ComparatorTests.test_command_case_is_not_erased) ... ok
+test_compare_names (test_comparator.ComparatorTests.test_compare_names) ... ok
+test_compare_requirements (test_comparator.ComparatorTests.test_compare_requirements) ... ok
+test_duplicate_yaml_keys_and_aliases_rejected (test_comparator.ComparatorTests.test_duplicate_yaml_keys_and_aliases_rejected) ... ok
+test_identical_and_reordered_documents_have_no_changes (test_comparator.ComparatorTests.test_identical_and_reordered_documents_have_no_changes) ... ok
+test_load_yaml_pair (test_comparator.ComparatorTests.test_load_yaml_pair) ... ok
+test_removed_element_requirements_are_reported (test_comparator.ComparatorTests.test_removed_element_requirements_are_reported) ... ok
+test_empty_scan_csv_retains_headers (test_executor.ExecutorTests.test_empty_scan_csv_retains_headers) ... ok
+test_export_csv (test_executor.ExecutorTests.test_export_csv) ... ok
+test_interrupted_scan_resumes_completed_content (test_executor.ExecutorTests.test_interrupted_scan_resumes_completed_content) ... ok
+test_load_difference_reports (test_executor.ExecutorTests.test_load_difference_reports) ... ok
+test_map_hadolint_rules (test_executor.ExecutorTests.test_map_hadolint_rules) ... ok
+test_no_differences_and_no_mapping_are_distinct (test_executor.ExecutorTests.test_no_differences_and_no_mapping_are_distinct) ... ok
+test_run_hadolint (test_executor.ExecutorTests.test_run_hadolint) ... ok
+test_runtime_crash_is_isolated_and_recorded (test_executor.ExecutorTests.test_runtime_crash_is_isolated_and_recorded) ... ok
+test_scan_failure_is_not_an_empty_success (test_executor.ExecutorTests.test_scan_failure_is_not_an_empty_success) ... ok
+test_traversal_zip_rejected (test_executor.ExecutorTests.test_traversal_zip_rejected) ... ok
+test_batched_results_equal_individual_results (test_executor.HadolintIntegrationTests.test_batched_results_equal_individual_results) ... ok
+test_duplicate_files_cache_and_original_paths (test_executor.HadolintIntegrationTests.test_duplicate_files_cache_and_original_paths) ... ok
+test_malformed_and_non_utf8_inputs_are_recorded (test_executor.HadolintIntegrationTests.test_malformed_and_non_utf8_inputs_are_recorded) ... ok
+test_real_full_and_selected_scans (test_executor.HadolintIntegrationTests.test_real_full_and_selected_scans) ... ok
+test_real_no_mapping_runs_all_rules (test_executor.HadolintIntegrationTests.test_real_no_mapping_runs_all_rules) ... ok
+test_archive_above_old_20000_entry_limit (test_executor.LargeArchiveTests.test_archive_above_old_20000_entry_limit) ... ok
+test_actual_name_only_failure_remains_rejected (test_extraction_format.ExtractionFormatTests.test_actual_name_only_failure_remains_rejected) ... ok
+test_all_styles_show_both_required_keys_and_json_escaped_title (test_extraction_format.ExtractionFormatTests.test_all_styles_show_both_required_keys_and_json_escaped_title) ... ok
+test_invalid_sample_limit_cannot_silently_create_empty_yaml (test_extraction_format.ExtractionFormatTests.test_invalid_sample_limit_cannot_silently_create_empty_yaml) ... ok
+test_retry_does_not_embed_bad_output_and_preserves_failed_audit (test_extraction_format.ExtractionFormatTests.test_retry_does_not_embed_bad_output_and_preserves_failed_audit) ... ok
+test_sampled_check_is_labeled_and_caches_valid_results_only (test_extraction_format.ExtractionFormatTests.test_sampled_check_is_labeled_and_caches_valid_results_only) ... Checking 1 recommendation(s) with all three prompt styles; diagnostic output only.
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "zero-shot", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "zero-shot", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "zero-shot", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "zero-shot", "section": 1, "sections": 1, "status": "cache-hit"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "few-shot", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "few-shot", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "few-shot", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "few-shot", "section": 1, "sections": 1, "status": "cache-hit"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "chain-of-thought", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "chain-of-thought", "section": 1, "sections": 1, "status": "validated"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "chain-of-thought", "section": 1, "sections": 1, "status": "starting"}
+{"file": "cis.pdf", "side": "right", "cis_id": "4.1", "prompt_type": "chain-of-thought", "section": 1, "sections": 1, "status": "cache-hit"}
+ok
+test_chain_of_thought_prompt (test_extractor.ExtractorTests.test_chain_of_thought_prompt) ... ok
+test_empty_and_encrypted_pdf_rejected (test_extractor.ExtractorTests.test_empty_and_encrypted_pdf_rejected) ... ok
+test_extract_kdes (test_extractor.ExtractorTests.test_extract_kdes) ... ok
+test_few_shot_prompt (test_extractor.ExtractorTests.test_few_shot_prompt) ... ok
+test_hallucinated_requirement_is_rejected (test_extractor.ExtractorTests.test_hallucinated_requirement_is_rejected) ... ok
+test_invalid_model_output_fails_and_logs (test_extractor.ExtractorTests.test_invalid_model_output_fails_and_logs) ... ok
+test_retry_changes_prompt_and_records_correction (test_extractor.ExtractorTests.test_retry_changes_prompt_and_records_correction) ... ok
+test_section_parser_avoids_controls_table_number (test_extractor.ExtractorTests.test_section_parser_avoids_controls_table_number) ... ok
+test_shared_cache_reuses_calls_across_pair_directories (test_extractor.ExtractorTests.test_shared_cache_reuses_calls_across_pair_directories) ... ok
+test_validate_documents (test_extractor.ExtractorTests.test_validate_documents) ... ok
+test_write_llm_log (test_extractor.ExtractorTests.test_write_llm_log) ... ok
+test_zero_shot_prompt (test_extractor.ExtractorTests.test_zero_shot_prompt) ... ok
+test_full_scan_uses_matching_defaults_and_selected_scan_excludes_new_rules (test_hadolint_versions.HadolintVersionIntegrationTests.test_full_scan_uses_matching_defaults_and_selected_scan_excludes_new_rules) ... ok
+test_removed_rule_is_rejected_before_scan (test_hadolint_versions.HadolintVersionTests.test_removed_rule_is_rejected_before_scan) ... ok
+test_runner_falls_back_to_local_scanner (test_hadolint_versions.HadolintVersionTests.test_runner_falls_back_to_local_scanner) ... ok
+test_runner_prefers_installed_scanner (test_hadolint_versions.HadolintVersionTests.test_runner_prefers_installed_scanner) ... ok
+test_runner_respects_explicit_scanner_path (test_hadolint_versions.HadolintVersionTests.test_runner_respects_explicit_scanner_path) ... Real PDF extraction check passed for all three prompt styles.
+This sampled check does not establish complete PDF extraction or requirement coverage.
+Starting run: v0/v1
+Starting run: v0/v2
+Starting run: v1/v2
+Starting run: v1/v1
+Starting run: v2/v2
+ok
+test_unknown_and_prerelease_versions_are_rejected (test_hadolint_versions.HadolintVersionTests.test_unknown_and_prerelease_versions_are_rejected) ... ok
+test_version_catalogs_include_additions_and_removal (test_hadolint_versions.HadolintVersionTests.test_version_catalogs_include_additions_and_removal) ... ok
+test_cached_completion_keeps_original_raw_output_and_audit_note (test_json_completion.JsonCompletionTests.test_cached_completion_keeps_original_raw_output_and_audit_note) ... ok
+test_completion_does_not_bypass_name_or_source_validation (test_json_completion.JsonCompletionTests.test_completion_does_not_bypass_name_or_source_validation) ... ok
+test_completion_never_invents_missing_values_or_ignores_trailing_text (test_json_completion.JsonCompletionTests.test_completion_never_invents_missing_values_or_ignores_trailing_text) ... ok
+test_description_only_is_rejected_after_syntax_completion (test_json_completion.JsonCompletionTests.test_description_only_is_rejected_after_syntax_completion) ... ok
+test_only_final_object_brace_can_be_completed (test_json_completion.JsonCompletionTests.test_only_final_object_brace_can_be_completed) ... ok
+test_repaired_but_incomplete_content_is_logged_and_never_cached (test_json_completion.JsonCompletionTests.test_repaired_but_incomplete_content_is_logged_and_never_cached) ... ok
+test_explicit_venv_python_symlink_is_preserved (test_model.ModelEnvironmentTests.test_explicit_venv_python_symlink_is_preserved) ... ok
+test_frozen_binary_finds_active_conda_python (test_model.ModelEnvironmentTests.test_frozen_binary_finds_active_conda_python) ... ok
+test_frozen_environment_restores_original_library_path (test_model.ModelEnvironmentTests.test_frozen_environment_restores_original_library_path) ... ok
+test_invalid_precision_is_rejected_before_startup (test_model.ModelEnvironmentTests.test_invalid_precision_is_rejected_before_startup) ... ok
+test_model_cache_identity_distinguishes_precision (test_model.ModelEnvironmentTests.test_model_cache_identity_distinguishes_precision) ... ok
+test_virtualenv_takes_precedence_over_conda (test_model.ModelEnvironmentTests.test_virtualenv_takes_precedence_over_conda) ... ok
+test_apple_silicon_requires_explicit_rosetta_option (test_setup.InstallerTests.test_apple_silicon_requires_explicit_rosetta_option) ... ok
+test_native_platform_assets (test_setup.InstallerTests.test_native_platform_assets) ... ok
+test_unsupported_platform_is_rejected (test_setup.InstallerTests.test_unsupported_platform_is_rejected) ... ok
+test_model_is_closed_before_scanning_and_errors_propagate (test_setup.PipelineMemoryTests.test_model_is_closed_before_scanning_and_errors_propagate) ... All five pairs finished in run mode. Inspect output status files and quality before submission.
+Validated PDFs; starting real Gemma extraction. Results are cached for resume.
+ok
+
+----------------------------------------------------------------------
+Ran 63 tests in 9.853s
+
+OK
+Completed run: /tmp/tmpaey263on/out
