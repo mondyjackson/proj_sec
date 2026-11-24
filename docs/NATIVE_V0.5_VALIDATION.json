@@ -1,0 +1,36 @@
+{
+  "status": "verified",
+  "version": "0.5.0",
+  "architecture": "macOS ARM64",
+  "python": 312,
+  "archive_bytes": 28851444,
+  "archive_sha256": "69c1744b15384cb0892635dcd8cc91857783f78d7447e50143d9177daccea7b2",
+  "binary_bytes": 29255216,
+  "binary_sha256": "75cd1e6b2ed37c5eece946d541d3c1e6660f1fdd76ea1c4cf6dbeac852d399ee",
+  "binary_mode": "0o755",
+  "frozen_modules_matching_source": [
+    "proj_sec",
+    "proj_sec.cli",
+    "proj_sec.common",
+    "proj_sec.comparator",
+    "proj_sec.coverage_review",
+    "proj_sec.executor",
+    "proj_sec.extractor",
+    "proj_sec.model",
+    "proj_sec.pdfio",
+    "proj_sec.prompts",
+    "proj_sec.scan_engine",
+    "proj_sec.selection"
+  ],
+  "external_model_worker_matching_source": true,
+  "recorded_real_smoke_response_valid": true,
+  "smoke_runtime": {
+    "model": "google/gemma-3-1b-it",
+    "revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+    "device": "mps",
+    "identity": "google/gemma-3-1b-it|google/gemma-3-1b-it|dcc83ea841ab6100d6b47a070329e1ba4cf78752|mps|greedy|seed42|tokens256|dtypebfloat16|schema2",
+    "dtype": "bfloat16",
+    "decoding_constraint": "unconstrained"
+  },
+  "limits": "Native execution occurred on the user Mac. Validation here inspected the uploaded frozen code, source agreement, artifact bytes, and recorded real model response; it did not execute ARM64 code on Linux."
+}

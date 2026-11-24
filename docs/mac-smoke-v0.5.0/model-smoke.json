@@ -1,0 +1,9 @@
+{
+  "name": "Restrict access",
+  "requirements": [
+    "Only administrators may access the service."
+  ],
+  "source_ids": [
+    "example"
+  ]
+}

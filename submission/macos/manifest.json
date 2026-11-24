@@ -1,29 +1,29 @@
 {
-  "archive": "proj-sec-macos-arm64-v0.4.0.tar.gz",
-  "archive_bytes": 28836387,
-  "archive_sha256": "6c3e9ea4641ef5c67dc1f21a5e414d9b1d7026ee879545695f224abf01b7ab26",
-  "binary": "proj-sec",
-  "binary_sha256": "40d079d161e610ef8da88875faef09a5ce42de6239898cc354409b9becf6d5ae",
-  "binary_bytes": 29240192,
-  "binary_mode": "0755",
-  "architecture": "macOS ARM64",
-  "version": "0.4.0",
+  "archive": "proj-sec-macos-arm64-v0.5.0.tar.gz",
+  "archive_bytes": 28851444,
+  "archive_sha256": "69c1744b15384cb0892635dcd8cc91857783f78d7447e50143d9177daccea7b2",
+  "version": "0.5.0",
   "parts": [
     {
       "name": "proj-sec-macos-arm64.tar.gz.part001",
       "bytes": 10000000,
-      "sha256": "6dc0cd3375e2a5d2daa197d9c7c73cabc70ad9e5c0516496bba55a712b923aa5"
+      "sha256": "e11482371d390a5a20cbe9d061a439aff20de88e464f8477c08284265024f168"
     },
     {
       "name": "proj-sec-macos-arm64.tar.gz.part002",
       "bytes": 10000000,
-      "sha256": "6a05812854bde1362f269648601f29b64fd1728ddda89732f88e461a0a47a833"
+      "sha256": "090257e6bc37da526832c19923ab7a647f01bcc275f7d9704987c2197a07d902"
     },
     {
       "name": "proj-sec-macos-arm64.tar.gz.part003",
-      "bytes": 8836387,
-      "sha256": "f163a63daac0fd43d47b9804f836e86f185fff0c28781110ee31bc91c004241f"
+      "bytes": 8851444,
+      "sha256": "e2c862bda83b310d88064a7e1db928f480d0b89d0cfa39d13080f3f1d7f9260d"
     }
   ],
-  "runtime_validation": "User ran the built executable on native Apple Silicon macOS: --version returned 0.4.0 and smoke-model with real Gemma on MPS/bfloat16 passed. Uploaded model-runtime.json and raw output were independently checked."
+  "binary": "proj-sec",
+  "binary_sha256": "75cd1e6b2ed37c5eece946d541d3c1e6660f1fdd76ea1c4cf6dbeac852d399ee",
+  "binary_bytes": 29255216,
+  "binary_mode": "0755",
+  "architecture": "macOS ARM64",
+  "runtime_validation": "User built and ran the native executable on Apple Silicon macOS with a real Gemma MPS/bfloat16 smoke response. Independent inspection confirmed version 0.5.0, exact agreement of all 12 frozen project modules and the external worker with the reviewed source, and the recorded source-grounded smoke result."
 }

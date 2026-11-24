@@ -1,21 +1,16 @@
 # Proj Sec
 
-**Candidate source: version 0.5.0; packaged submission checkpoint: version 0.4.0.**
-
-The default pipeline now includes real Gemma omission review with a language-evidence gate. See [docs/COVERAGE_REVIEW.md](docs/COVERAGE_REVIEW.md) for recorded full-document coverage, limitations, and regeneration commands. The version 0.5.0 five-pair run and native build must be verified before replacing packaged artifacts.
-
-**Packaged checkpoint:** Final outputs contain only actual Gemma-selected requirements, with supplemental source context kept separately. All five pipeline runs and the native Mac build are complete. See [SUBMISSION.md](SUBMISSION.md) for restoration and [docs/MODEL_SELECTED_RESULTS_REVIEW.md](docs/MODEL_SELECTED_RESULTS_REVIEW.md) for model limitations.
+**Current submission: version 0.5.0.** All five assigned pipeline runs and the native Apple Silicon executable are verified. The default pipeline uses real Gemma omission review with a language-evidence gate. Only actual model selections can enter the final requirements.
 
 Public repository: https://github.com/mondyjackson/proj_sec
 
-The reviewed version 0.4.0 final outputs are in [submission/final-results.zip](submission/final-results.zip).
-Restore all five pairs into outputs/model-selected, including all 15 scan CSV paths, with:
+Restore the verified five-pair outputs into outputs/coverage-final, including all 30 YAMLs and all 15 scan CSV paths:
 
 ```bash
 python scripts/restore_final_results.py
 ```
 
-See [submission/README.md](submission/README.md) for the bundle contents and hashes.
+The exact uploaded result archive is stored as checksum-verified parts under [submission/results](submission/results). See [SUBMISSION.md](SUBMISSION.md) for the complete handoff, [submission/README.md](submission/README.md) for archive details, and [docs/COVERAGE_REVIEW.md](docs/COVERAGE_REVIEW.md) for exact-text coverage and limitations. The review covers the parsed Description and Remediation fields against an assistant-reviewed reference; it does not establish independent semantic accuracy. Some initial background selections remain.
 
 **M1 Mac setup:** start with [TOMORROW_START_HERE.md](TOMORROW_START_HERE.md).
 
@@ -47,7 +42,8 @@ Individual submission; no teammates.
 
 The core and scanner were checked on Linux x86_64 with Python 3.12. The
 user completed real Gemma extraction on native Apple Silicon Python 3.12.16,
-using MPS and bfloat16 in the proj-sec Conda environment. Authenticated model
+using MPS/bfloat16 for initial extraction and MPS/float32 for omission review,
+with sequential model workers in the proj-sec Conda environment. Authenticated model
 access is required for new inference. Use Python 3.12 for the supplied core
 dependency lock.
 
@@ -238,12 +234,12 @@ and docs/RULE_MAPPING.md for the mapping limitations and severity handling.
 The supplied workflow runs tests on push, pull_request, and manual dispatch,
 including real Hadolint tests without needing model credentials. After tests pass, a separate job builds a Linux executable and uploads it as
 an artifact with a checksum. Actual test logs are also retained as an artifact.
-The [verified workflow run](https://github.com/mondyjackson/proj_sec/actions/runs/45441968501)
-passed all 103 tests and successfully built and smoke-tested the Linux executable.
-The actual test log is preserved in docs/github-actions-test-results.txt.
-That run documents the packaged checkpoint. Candidate version 0.5.0 passed
-119 local tests, including the real Hadolint tests; its log is in
-docs/coverage-review-unit-tests.txt. Native Mac regeneration remains required.
+Current run logs and platform artifacts are available in
+[GitHub Actions](https://github.com/mondyjackson/proj_sec/actions).
+Version 0.5.0 passed 122 local tests, including real Hadolint and restoration
+checks; the transcript is in docs/coverage-review-unit-tests.txt. The native Mac
+artifact is verified separately in docs/MAC_EXECUTABLE.md. See
+[docs/GITHUB_ACTIONS.md](docs/GITHUB_ACTIONS.md) for current and historical CI evidence.
 
 A local git pull is not a native GitHub Actions trigger. An optional post-merge
 hook runs tests after pulls that merge or fast-forward new commits:

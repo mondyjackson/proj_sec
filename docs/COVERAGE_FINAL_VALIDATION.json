@@ -1,0 +1,185 @@
+{
+  "status": "verified",
+  "source_version": "0.5.0",
+  "archive_sha256": "e138374e8c6da694526b1a7dad9f6d60db56c6c6f79991ec18ee909c5debad11",
+  "counts": {
+    "yaml_files": 30,
+    "comparison_mapping_files": 45,
+    "initial_response_occurrences": 7044,
+    "review_response_occurrences": 2454,
+    "processed_block_occurrences": 7044
+  },
+  "distinct_document_style_blocks": 2112,
+  "new_review_inference_requests": 0,
+  "new_scanner_executions": 0,
+  "scan_csv_sha256": "68815c2948c5e57800246a992d4523bdf78015d43ae56cbd43f0891f6eaaf99e",
+  "csv_rows_per_scan": 1598633,
+  "findings_per_scan": 2284489,
+  "by_style": {
+    "zero-shot": {
+      "background/full": 97,
+      "ambiguous/full": 3,
+      "requirement_or_action/full": 1017,
+      "background/missing": 100,
+      "qualifier/full": 21,
+      "formatting/full": 12,
+      "formatting/missing": 3
+    },
+    "few-shot": {
+      "background/full": 120,
+      "ambiguous/full": 3,
+      "requirement_or_action/full": 1017,
+      "background/missing": 77,
+      "qualifier/full": 21,
+      "formatting/full": 12,
+      "formatting/missing": 3
+    },
+    "chain-of-thought": {
+      "background/missing": 107,
+      "ambiguous/full": 3,
+      "requirement_or_action/full": 1017,
+      "background/full": 90,
+      "qualifier/full": 21,
+      "formatting/full": 9,
+      "formatting/missing": 6
+    }
+  },
+  "scans": [
+    {
+      "pair": "v0-v1",
+      "style": "zero-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v0-v1",
+      "style": "few-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v0-v1",
+      "style": "chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v0-v2",
+      "style": "zero-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v0-v2",
+      "style": "few-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v0-v2",
+      "style": "chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v1-v2",
+      "style": "zero-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v1-v2",
+      "style": "few-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v1-v2",
+      "style": "chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v1-v1",
+      "style": "zero-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v1-v1",
+      "style": "few-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v1-v1",
+      "style": "chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v2-v2",
+      "style": "zero-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v2-v2",
+      "style": "few-shot",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    },
+    {
+      "pair": "v2-v2",
+      "style": "chain-of-thought",
+      "status": "completed-with-tool-errors",
+      "candidate_files": 397567,
+      "parse_error_files": 2546,
+      "tool_error_files": 2,
+      "new_executions": 0
+    }
+  ],
+  "limitations": "Exact source-text coverage against an assistant-reviewed reference; not independent semantic accuracy or a grade. Baseline background remains. The same 2 upstream tool failures and 2546 parser-error files remain explicitly recorded per scan."
+}

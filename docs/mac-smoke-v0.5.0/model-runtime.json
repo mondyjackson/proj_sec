@@ -1,0 +1,8 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+  "device": "mps",
+  "identity": "google/gemma-3-1b-it|google/gemma-3-1b-it|dcc83ea841ab6100d6b47a070329e1ba4cf78752|mps|greedy|seed42|tokens256|dtypebfloat16|schema2",
+  "dtype": "bfloat16",
+  "decoding_constraint": "unconstrained"
+}

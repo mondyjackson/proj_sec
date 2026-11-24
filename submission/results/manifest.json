@@ -1,0 +1,21 @@
+{
+  "archive": "Proj_Sec_Coverage_Final.zip",
+  "archive_bytes": 19434639,
+  "archive_sha256": "e138374e8c6da694526b1a7dad9f6d60db56c6c6f79991ec18ee909c5debad11",
+  "version": "0.5.0",
+  "parts": [
+    {
+      "name": "final-results.zip.part001",
+      "bytes": 10000000,
+      "sha256": "b84291d3c3ac51954679b3e79b7d4bc3e8678948d092f5df1038ab254a7b41dd"
+    },
+    {
+      "name": "final-results.zip.part002",
+      "bytes": 9434639,
+      "sha256": "d70b004353ea4dfa1dde837571797e77fffed31623654ec0eb6f43a287292310"
+    }
+  ],
+  "format": "proj-sec-reviewed-results-v1",
+  "csv_paths": 15,
+  "unique_csv_files": 1
+}

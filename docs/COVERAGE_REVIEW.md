@@ -84,9 +84,17 @@ flags do not by themselves establish either classification. --no-omission-review
 is available for baseline comparisons. --review-dtype and --review-passes allow
 explicit runtime choices.
 
-Version 0.5.0 requires a fresh five-pair pipeline run and native binary build
-before replacing the packaged version 0.4.0 submission artifacts. The earlier
-artifact bundle and Mac archive remain labeled with their actual version.
+The user completed the integrated version 0.5.0 five-pair run. All 30 YAMLs,
+45 comparison/mapping reports, 7,044 original response occurrences, and 2,454
+review-response occurrences match the verified replay. All review responses and
+scanner results were valid cache hits; no new inference or scanner execution
+was needed. The same documented parse/tool errors remain.
+
+The native 0.5.0 archive is also verified. Its 12 frozen project modules and
+external model worker match the reviewed source, and the uploaded real Gemma
+smoke response passed source validation. See MAC_EXECUTABLE.md,
+COVERAGE_FINAL_VALIDATION.json, and NATIVE_V0.5_VALIDATION.json. Earlier
+0.4.0 review documents are historical evidence, not the current output bundle.
 
 After the five-pair run, create a compact review archive with:
 

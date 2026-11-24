@@ -62,7 +62,7 @@ test_actual_name_only_failure_remains_rejected (test_extraction_format.Extractio
 test_all_styles_show_both_required_keys_and_json_escaped_title (test_extraction_format.ExtractionFormatTests.test_all_styles_show_both_required_keys_and_json_escaped_title) ... ok
 test_invalid_sample_limit_cannot_silently_create_empty_yaml (test_extraction_format.ExtractionFormatTests.test_invalid_sample_limit_cannot_silently_create_empty_yaml) ... ok
 test_retry_does_not_embed_bad_output_and_preserves_failed_audit (test_extraction_format.ExtractionFormatTests.test_retry_does_not_embed_bad_output_and_preserves_failed_audit) ... ok
-test_sampled_check_is_labeled_and_caches_valid_results_only (test_extraction_format.ExtractionFormatTests.test_sampled_check_is_labeled_and_caches_valid_results_only) ... Completed run: /tmp/tmplclokq_h
+test_sampled_check_is_labeled_and_caches_valid_results_only (test_extraction_format.ExtractionFormatTests.test_sampled_check_is_labeled_and_caches_valid_results_only) ... Completed run: /tmp/tmp3ch4k8yq
 Checking 1 recommendation(s) with all three prompt styles; diagnostic output only.
 {"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "starting"}
 {"file": "cis.pdf", "side": "left", "cis_id": "4.1", "prompt_type": "zero-shot", "source_field": "Description", "section": 1, "sections": 1, "status": "validated"}
@@ -131,10 +131,15 @@ test_embedded_payload_matches_the_reviewed_project_files (test_model_selected_up
 test_payload_paths_cannot_escape_the_project (test_model_selected_update.ModelSelectedUpdateTests.test_payload_paths_cannot_escape_the_project) ... ok
 test_unknown_source_revision_fails_before_any_project_file_changes (test_model_selected_update.ModelSelectedUpdateTests.test_unknown_source_revision_fails_before_any_project_file_changes) ... ok
 test_update_preserves_backups_and_a_second_apply_changes_nothing (test_model_selected_update.ModelSelectedUpdateTests.test_update_preserves_backups_and_a_second_apply_changes_nothing) ... ok
+test_corrupted_archive_part_is_rejected_before_restoration (test_result_restore.ResultRestoreTests.test_corrupted_archive_part_is_rejected_before_restoration) ... ok
+test_existing_conflict_is_detected_before_any_new_file_is_written (test_result_restore.ResultRestoreTests.test_existing_conflict_is_detected_before_any_new_file_is_written) ... ok
+test_shared_csv_is_restored_to_all_paths_and_matching_files_are_preserved (test_result_restore.ResultRestoreTests.test_shared_csv_is_restored_to_all_paths_and_matching_files_are_preserved) ... ok
 test_apple_silicon_requires_explicit_rosetta_option (test_setup.InstallerTests.test_apple_silicon_requires_explicit_rosetta_option) ... ok
 test_native_platform_assets (test_setup.InstallerTests.test_native_platform_assets) ... ok
 test_unsupported_platform_is_rejected (test_setup.InstallerTests.test_unsupported_platform_is_rejected) ... ok
 test_model_is_closed_before_scanning_and_errors_propagate (test_setup.PipelineMemoryTests.test_model_is_closed_before_scanning_and_errors_propagate) ... All five pairs finished in run mode. Inspect output status files and quality before submission.
+Restored verified final reports and all 15 scan CSV paths to /tmp/tmpjbt0k94u/results
+Restored verified final reports and all 15 scan CSV paths to /tmp/tmpjbt0k94u/results
 Validated PDFs; starting real Gemma extraction. Results are cached for resume.
 ok
 test_description_and_remediation_are_merged_into_one_element_per_style (test_source_blocks.SourceBlockTests.test_description_and_remediation_are_merged_into_one_element_per_style) ... ok
@@ -156,7 +161,7 @@ test_partial_model_selections_do_not_backfill_unselected_remediation (test_sourc
 test_prompt_builders_request_ids_and_keep_json_builders_for_old_cache_keys (test_source_selection.SourceSelectionTests.test_prompt_builders_request_ids_and_keep_json_builders_for_old_cache_keys) ... ok
 
 ----------------------------------------------------------------------
-Ran 119 tests in 10.262s
+Ran 122 tests in 10.873s
 
 OK
-Completed run: /tmp/tmppb7swh9d/out
+Completed run: /tmp/tmpixnwli9o/out
